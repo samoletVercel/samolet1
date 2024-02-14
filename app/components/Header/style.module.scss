@@ -1,9 +1,41 @@
 .header {
+  z-index: 999;
   position: fixed;
-  height: 4.63rem;
+  min-height: 5rem;
   width: 100%;
   background-color: white;
+  overflow: hidden;
+
+  .main {
+    height: 5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header_menu {
+    height: 100vh;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+.wide_line {
+  width: 100%;
+  height: 8px;
+  background-color: #333333;
+}
+
+.thin_line {
+  width: 100%;
+  height: 1px;
+  background-color: #333333;
+}
+
+.links_list {
+  margin-top: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
 }

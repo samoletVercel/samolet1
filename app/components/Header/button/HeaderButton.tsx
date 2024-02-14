@@ -5,6 +5,7 @@ import burger from "@/public/burger.svg";
 import close from "@/public/cross.svg";
 import { useState, Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
+import { helios } from "@/app/fonts";
 
 const HeaderButton = ({
   isOpened,
@@ -45,7 +46,7 @@ const HeaderButtonElement = ({
 }) => {
   return (
     <div className={styles.element}>
-      <p className={variables.textMain}>{title}</p>
+      <p className={helios.className}>{title}</p>
       <Image src={image.src} alt={image.alt} style={{ marginTop: "0.2rem" }} />
     </div>
   );
