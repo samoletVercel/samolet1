@@ -1,21 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import variables from "@/app/variables.module.scss";
-import samolet from "@/public/samolet_header.svg";
+import samolet from "@/public/samolet_header_without_shadow.svg";
+import letterO from "@/public/o.svg";
 import MainSection from "./components/Main/Section/MainSection";
+import InteractiveHeader from "./components/Main/InteractiveHeader/InteractiveHeader";
 
 export default function Home() {
   return (
     <main className={styles.container}>
-      <div className={styles.main_logo}>
-        <div className={styles.main_logo_container}>
-          <Image
-            src={samolet}
-            alt="logo_big"
-            className={styles.main_logo_img}
-          />
-        </div>
-      </div>
+      <InteractiveHeader />
       <div className={styles.main_sections}>
         <div className={styles.wide_line}></div>
         <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>

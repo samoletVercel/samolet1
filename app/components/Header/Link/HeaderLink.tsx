@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import variables from "@/app/variables.module.scss";
 import { useState, Dispatch, SetStateAction } from "react";
+import { swift } from "@/app/fonts";
 
 const HeaderLink = ({
   text,
@@ -18,7 +19,7 @@ const HeaderLink = ({
       className={styles.header_link}
       onClick={() => setIsOpened(false)}
     >
-      <p>{text}</p>
+      <p className={swift.className}>{text}</p>
     </Link>
   );
 };

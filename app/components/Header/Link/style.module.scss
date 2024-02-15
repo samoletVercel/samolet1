@@ -2,9 +2,14 @@
   font-size: 2rem;
   width: 100%;
   padding-bottom: 1rem;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 
   position: relative;
+
+  p {
+    padding-left: 0;
+    transition: 0.3s;
+  }
 
   p:after {
     content: "";
@@ -14,12 +19,16 @@
     background: #333333;
 
     position: absolute;
-    bottom: 0px;
+    bottom: -6px;
     left: 0;
     transition: width 0.3s, height 0.3s;
   }
 
   &:hover {
+    p {
+      padding-left: 1rem;
+    }
+
     p:after {
       width: 100%;
       height: 8px;
