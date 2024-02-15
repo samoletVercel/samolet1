@@ -8,7 +8,13 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <div className={styles.main_logo}>
-        <Image src={samolet} alt="logo_big" className={styles.main_logo_img} />
+        <div className={styles.main_logo_container}>
+          <Image
+            src={samolet}
+            alt="logo_big"
+            className={styles.main_logo_img}
+          />
+        </div>
       </div>
       <div className={styles.main_sections}>
         <div className={styles.wide_line}></div>

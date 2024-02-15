@@ -6,8 +6,19 @@
 .main_logo {
   margin: 11.25rem 0;
 
-  .main_logo_img {
+  .main_logo_container {
+    position: relative;
+    height: 0;
     width: 100%;
+    padding: 0;
+    padding-bottom: 20%;
+    .main_logo_img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
   }
 }
 

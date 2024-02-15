@@ -17,7 +17,7 @@ const MainSection = ({
     <Link href={link}>
       <div className={`${variables.textMain} ${styles.main_section}`}>
         <div className={styles.title}>
-          <Image src={arrow} alt="arrow-icon" />
+          <Image src={arrow} alt="arrow-icon" className={styles.title_icon} />
           <p>{title}</p>
         </div>
         <div className={styles.preview}>

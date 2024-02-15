@@ -3,7 +3,7 @@
 
   .title {
     position: relative;
-    left: -2.6rem;
+    left: 0;
 
     transition: 0.2s;
 
@@ -12,8 +12,9 @@
     align-items: center;
     padding: 1.5rem 0;
 
-    p {
-      padding-top: 0.3rem;
+    .title_icon {
+      position: absolute;
+      left: calc(-1rem - 27px);
     }
   }
 
@@ -45,7 +46,7 @@
 
   &:hover {
     .title {
-      left: 0;
+      left: calc(1rem + 27px);
     }
 
     .preview {
