@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${swift.className}`}>
+      <body className={`${helios.className}`}>
         <Header />
         {children}
       </body>

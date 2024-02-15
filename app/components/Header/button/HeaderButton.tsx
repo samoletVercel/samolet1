@@ -46,8 +46,8 @@ const HeaderButtonElement = ({
 }) => {
   return (
     <div className={styles.element}>
-      <p className={helios.className}>{title}</p>
-      <Image src={image.src} alt={image.alt} style={{ marginTop: "0.2rem" }} />
+      <p className={`${helios.className} ${variables.textMain}`}>{title}</p>
+      <Image src={image.src} alt={image.alt} />
     </div>
   );
 };
