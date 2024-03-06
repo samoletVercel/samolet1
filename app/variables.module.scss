@@ -15,3 +15,30 @@ $color-white: white;
   font-weight: 300;
   line-height: 1.95rem;
 }
+
+.textSec {
+  font-size: 1.25rem;
+  line-height: 150%;
+}
+
+.textTitle {
+  color: $color-primary;
+  font-size: 4rem;
+  margin-top: 1.5rem;
+  font-style: normal;
+  line-height: 120%;
+}
+
+.container {
+  width: 100%;
+  padding: 0 2rem;
+}
+@media screen and (max-width: 900px) {
+  .textTitle {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}

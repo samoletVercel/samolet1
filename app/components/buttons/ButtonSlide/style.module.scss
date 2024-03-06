@@ -1,0 +1,13 @@
+.button {
+  width: 100%;
+  display: inline-block;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+
+  div {
+    min-width: fit-content;
+    background-color: #333333;
+    color: white;
+    padding: 1rem 2rem;
+  }
+}

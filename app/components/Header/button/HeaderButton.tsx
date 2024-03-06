@@ -5,7 +5,7 @@ import burger from "@/public/burger.svg";
 import close from "@/public/cross.svg";
 import { useState, Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
-import { helios } from "@/app/fonts";
+import { ptRootUI } from "@/app/fonts";
 
 const HeaderButton = ({
   isOpened,
@@ -46,8 +46,8 @@ const HeaderButtonElement = ({
 }) => {
   return (
     <div className={styles.element}>
-      <p className={`${helios.className} ${variables.textMain}`}>{title}</p>
-      <Image src={image.src} alt={image.alt} style={{ marginTop: "0.2rem" }} />
+      <p className={`${ptRootUI.className} ${variables.textMain}`}>{title}</p>
+      <Image src={image.src} alt={image.alt} style={{ marginTop: "0.27rem" }} />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { helios } from "./fonts";
-import { swift } from "./fonts";
+import { ptRootUI } from "./fonts";
 import Header from "./components/Header/Header";
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${helios.className}`}>
+      <body className={`${ptRootUI.className}`}>
         <Header />
         {children}
       </body>
