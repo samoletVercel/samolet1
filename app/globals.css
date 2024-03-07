@@ -4,9 +4,13 @@
   margin: 0;
 }
 
-@media screen and (min-width: 2000px) {
+:root {
+  font-size: calc(100vw / 100);
+}
+
+@media screen and (max-width: 900px) {
   :root {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 

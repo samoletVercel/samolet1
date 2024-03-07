@@ -29,6 +29,7 @@ const ButtonSlide = ({ text, link }: { text: string; link: string }) => {
             paddingLeft: "2rem",
           },
         }}
+        initial="inactive"
         animate={isHover ? "active" : "inactive"}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >

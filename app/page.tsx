@@ -6,15 +6,20 @@ import InteractiveHeader from "./components/Main/InteractiveHeader/InteractiveHe
 
 import aboutPic from "@/public/about1.png";
 import aboutPic2 from "@/public/about2.png";
+import samolet from "@/public/samolet_header.svg";
 
 import { swift } from "./fonts";
 import Reveal from "./components/animations/Reveal";
-import ButtonSlide from "./components/buttons/ButtonSlide/ButtonSlide";
+import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
+import SubTitle from "./components/titles/SubTitle/SubTitle";
+import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
+import NewsBlock from "./components/Main/NewsBlock/NewsBlock";
 
 export default function Home() {
   return (
     <main className={variables.container}>
-      <InteractiveHeader />
+      {/* <InteractiveHeader /> */}
+      <Image className={styles.headerImg} src={samolet} alt="samolet header" />
       <section className={styles.main_sections}>
         <div className={styles.wide_line}></div>
         <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
@@ -58,7 +63,17 @@ export default function Home() {
 
         <ButtonSlide text="о студии" link="#" />
       </section>
-      <div style={{ height: "100vh" }}></div>
+
+      <section>
+        <SubTitle text={"Интересные проекты"} />
+        <ProjectsBlock />
+      </section>
+
+      <section>
+        <SubTitle text={"Последние события"} />
+        <NewsBlock />
+        <ButtonSlide text="все события" link="#" />
+      </section>
     </main>
   );
 }
