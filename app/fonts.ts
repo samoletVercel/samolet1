@@ -7,10 +7,12 @@ export const helios = localFont({
 
 export const swift = localFont({
   src: "./static-fonts/Swift-Bold.ttf",
-  variable: "--swift-font",
 });
 
 export const ptRootUI = localFont({
   src: "./static-fonts/PT-Root-UI_Regular.ttf",
-  variable: "--swift-font",
+});
+
+export const ptRootUIMed = localFont({
+  src: "./static-fonts/PT-Root-UI_Medium.ttf",
 });

@@ -19,7 +19,12 @@ export default function Home() {
   return (
     <main className={variables.container}>
       {/* <InteractiveHeader /> */}
-      <Image className={styles.headerImg} src={samolet} alt="samolet header" />
+      <Image
+        className={styles.headerImg}
+        id="headerImageBlock"
+        src={samolet}
+        alt="samolet header"
+      />
       <section className={styles.main_sections}>
         <div className={styles.wide_line}></div>
         <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>

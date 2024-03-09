@@ -28,6 +28,12 @@
       position: relative;
     }
 
+    @media screen and (max-width: 900px) {
+      p {
+        display: none;
+      }
+    }
+
     p:after {
       content: "";
       width: 0%;
@@ -48,5 +54,11 @@
         width: 100%;
       }
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    right: 0;
   }
 }
