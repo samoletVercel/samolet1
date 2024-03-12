@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import styles from "./page.module.scss";
 import variables from "@/app/variables.module.scss";
 import MainSection from "./components/Main/Section/MainSection";
@@ -15,6 +16,11 @@ import SubTitle from "./components/titles/SubTitle/SubTitle";
 import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
 import NewsBlock from "./components/Main/NewsBlock/NewsBlock";
 
+export const metadata: Metadata = {
+  title: "Главная",
+  description: "дизайн-студия Самолет",
+};
+
 export default function Home() {
   return (
     <main className={variables.container}>
@@ -29,7 +35,7 @@ export default function Home() {
         <div className={styles.wide_line}></div>
         <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
         <div className={`${styles.sections_grid} ${variables.textMain}`}>
-          <MainSection title="Брендинг" link="" />
+          <MainSection title="Брендинг" link="/branding" />
           <MainSection title="Издательство" link="" />
           <MainSection title="Спецпроекты" link="" />
         </div>

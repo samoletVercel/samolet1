@@ -5,6 +5,7 @@ import variables from "@/app/variables.module.scss";
 import { swift } from "@/app/fonts";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Project } from "@/app/types";
 
 const ProjectCard = ({
   gridColumn,

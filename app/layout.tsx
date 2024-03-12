@@ -4,11 +4,6 @@ import { ptRootUI } from "./fonts";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-export const metadata: Metadata = {
-  title: "Главная",
-  description: "дизайн-студия Самолет",
-};
-
 export default function RootLayout({
   children,
 }: {
