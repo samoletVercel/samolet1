@@ -10,7 +10,7 @@ import aboutPic2 from "@/public/about2.png";
 import samolet from "@/public/samolet_header.svg";
 
 import { swift } from "./fonts";
-import Reveal from "./components/animations/Reveal";
+import Reveal from "./components/animations/Reveal/Reveal";
 import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
 import SubTitle from "./components/titles/SubTitle/SubTitle";
 import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
@@ -33,10 +33,10 @@ export default function Home() {
       />
       <section className={styles.main_sections}>
         <div className={styles.wide_line}></div>
-        <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
+        <div className={styles.thin_line} style={{ marginTop: "0.4rem" }}></div>
         <div className={`${styles.sections_grid} ${variables.textMain}`}>
           <MainSection title="Брендинг" link="/branding" />
-          <MainSection title="Издательство" link="" />
+          <MainSection title="Издательство" link="/publishing" />
           <MainSection title="Спецпроекты" link="" />
         </div>
       </section>

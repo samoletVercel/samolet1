@@ -44,6 +44,12 @@
     }
   }
 
+  @media screen and (max-width: 900px) {
+    .preview {
+      display: none;
+    }
+  }
+
   &:hover {
     .title {
       left: calc(1rem + 27px);
@@ -56,5 +62,11 @@
         height: 0;
       }
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main_section {
+    border-bottom: 1px solid #333333;
   }
 }

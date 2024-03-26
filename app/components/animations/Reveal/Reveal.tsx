@@ -13,7 +13,7 @@ const Reveal = ({
 }) => {
   const ref = useRef(null);
 
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   const mainControls = useAnimation();
 
@@ -32,7 +32,7 @@ const Reveal = ({
     >
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"

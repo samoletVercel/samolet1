@@ -28,6 +28,10 @@
 }
 
 @media screen and (max-width: 900px) {
+  .marginTopSection {
+    margin-top: 2rem;
+  }
+
   .sections_grid {
     grid-template-columns: 1fr;
   }

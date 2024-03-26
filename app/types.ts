@@ -9,3 +9,11 @@ export interface Project {
   year?: string;
   link?: string;
 }
+
+export interface PublishingProject {
+  img: StaticImageData;
+  name: string;
+  tags: Array<string>;
+  author: string;
+  scan?: boolean;
+}

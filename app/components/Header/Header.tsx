@@ -93,7 +93,11 @@ const Header = () => {
             link="/branding"
             setIsOpened={setIsOpened}
           />
-          <HeaderLink text="Издательство" link="" setIsOpened={setIsOpened} />
+          <HeaderLink
+            text="Издательство"
+            link="/publishing"
+            setIsOpened={setIsOpened}
+          />
           <HeaderLink text="Спецпроекты" link="" setIsOpened={setIsOpened} />
           <HeaderLink text="О студии" link="" setIsOpened={setIsOpened} />
           <HeaderLink text="Блог" link="" setIsOpened={setIsOpened} />
