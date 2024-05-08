@@ -7,9 +7,11 @@ import { useEffect, useRef } from "react";
 const Reveal = ({
   children,
   width,
+  delay,
 }: {
   children: JSX.Element;
   width?: "fit-content" | "100%";
+  delay?: number;
 }) => {
   const ref = useRef(null);
 
@@ -32,12 +34,12 @@ const Reveal = ({
     >
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 100 },
+          hidden: { opacity: 0, y: 300 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.8, delay: delay, ease: [0.16, 1, 0.3, 1] }}
       >
         {children}
       </motion.div>

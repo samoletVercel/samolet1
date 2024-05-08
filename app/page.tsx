@@ -15,6 +15,10 @@ import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
 import SubTitle from "./components/titles/SubTitle/SubTitle";
 import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
 import NewsBlock from "./components/Main/NewsBlock/NewsBlock";
+import StaggerReveal from "./components/animations/StaggerReveal/StaggerReveal";
+
+import sam from "@/public/shtrih.svg";
+import Shtrih from "./components/animations/Shtrih/Shtrih";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -24,6 +28,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={variables.container}>
+      {/* <Shtrih /> */}
       {/* <InteractiveHeader /> */}
       <Image
         className={styles.headerImg}
@@ -47,14 +52,18 @@ export default function Home() {
         className={`${styles.marginTopSection} ${styles.mainAboutSection}`}
       >
         <div className={styles.wide_line}></div>
-        <Reveal>
-          <p className={`${variables.textTitle} ${swift.className}`}>
+        {/* <p className={`${variables.textTitle} ${swift.className}`}>
             Летаем в мире дизайна с 1995 года. Создаем уникальный фирменный
             стиль и предлагаем эксклюзивные услуги издательства.
-          </p>
-        </Reveal>
+          </p> */}
+        <StaggerReveal
+          size="4rem"
+          text={
+            "Летаем в мире дизайна с 1995 года. Создаем уникальный фирменный стиль и предлагаем эксклюзивные услуги издательства."
+          }
+        />
 
-        <Reveal>
+        <Reveal delay={0.45}>
           <div className={`${styles.aboutSectionContent}`}>
             <p className={variables.textSec}>
               Студия основана в 1995 году Владимиром Семенихиным. Основное
@@ -73,6 +82,8 @@ export default function Home() {
         </Reveal>
 
         <ButtonSlide text="о студии" link="#" />
+
+        {/* <StaggerReveal size="12rem" text={"брендинг"} /> */}
       </section>
 
       <section>
