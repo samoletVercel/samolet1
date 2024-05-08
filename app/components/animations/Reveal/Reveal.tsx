@@ -32,12 +32,12 @@ const Reveal = ({
     >
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, x: -100 },
+          visible: { opacity: 1, x: 0 },
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
       >
         {children}
       </motion.div>

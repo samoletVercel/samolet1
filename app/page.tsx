@@ -7,14 +7,19 @@ import InteractiveHeader from "./components/Main/InteractiveHeader/InteractiveHe
 
 import aboutPic from "@/public/about1.png";
 import aboutPic2 from "@/public/about2.png";
-import samolet from "@/public/samolet_header.svg";
+import samolet from "@/public/samolet_header_without_shadow.svg";
 
 import { swift } from "./fonts";
+import { ptRootUIMed } from "./fonts";
 import Reveal from "./components/animations/Reveal/Reveal";
 import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
 import SubTitle from "./components/titles/SubTitle/SubTitle";
 import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
 import NewsBlock from "./components/Main/NewsBlock/NewsBlock";
+import AnimatedText from "./components/animations/AnimatedText/AnimatedText";
+import AnimatedLine from "./components/animations/AnimatedLine/AnimatedLine";
+import Button from "./components/UI/buttons/Button/Button";
+import InteractiveProjects from "./components/Main/InteractiveProjects/InteractiveProjects";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -31,7 +36,7 @@ export default function Home() {
         src={samolet}
         alt="samolet header"
       />
-      <section className={styles.main_sections}>
+      {/*  <section className={styles.main_sections}>
         <div className={styles.wide_line}></div>
         <div className={styles.thin_line} style={{ marginTop: "0.4rem" }}></div>
         <div className={`${styles.sections_grid} ${variables.textMain}`}>
@@ -39,41 +44,57 @@ export default function Home() {
           <MainSection title="Издательство" link="/publishing" />
           <MainSection title="Спецпроекты" link="" />
         </div>
-      </section>
+      </section> */}
 
       {/* --------- */}
 
       <section
         className={`${styles.marginTopSection} ${styles.mainAboutSection}`}
       >
-        <div className={styles.wide_line}></div>
-        <Reveal>
-          <p className={`${variables.textTitle} ${swift.className}`}>
-            Летаем в мире дизайна с 1995 года. Создаем уникальный фирменный
-            стиль и предлагаем эксклюзивные услуги издательства.
-          </p>
-        </Reveal>
+        <AnimatedLine wide={true} />
 
-        <Reveal>
-          <div className={`${styles.aboutSectionContent}`}>
-            <p className={variables.textSec}>
-              Студия основана в 1995 году Владимиром Семенихиным. Основное
-              направление деятельности — графический и комплексный дизайн,
-              корпоративная идентификация, брендинг.
+        <AnimatedText
+          text={[
+            "Летаем в мире дизайна с 1995 года",
+            "Создаём уникальные фирменные стили",
+            "и авторские издательские проекты.",
+          ]}
+        />
+
+        <div style={{ marginTop: "10rem" }}></div>
+
+        <AnimatedLine wide={false} />
+
+        <div className={`${styles.aboutSectionContentSec}`}>
+          <Image src={aboutPic2} alt="about_second" />
+          <div className={`${styles.textContainer} ${variables.textMain}`}>
+            <span className={ptRootUIMed.className}>
+              Владимир Семенихин — основатель студии.
+            </span>
+            <p>
+              Мы не просто создаем дизайн, мы стремимся к искусству <br />в
+              каждом проекте, будь то разработка фирменного стиля, оформление
+              упаковки или издание книг и каталогов. Студия «Самолет» – это
+              сообщество творческих личностей, готовых взлететь в мир идей и
+              вдохновения. »
             </p>
 
-            <Image alt="about_first" src={aboutPic} />
-          </div>
-        </Reveal>
+            <div style={{ marginTop: "4rem" }} />
 
-        <Reveal>
-          <div className={`${styles.aboutSectionContentSec}`}>
-            <Image src={aboutPic2} alt="about_second" />
+            <Button text="О студии" link="" />
           </div>
-        </Reveal>
-
-        <ButtonSlide text="о студии" link="#" />
+        </div>
       </section>
+
+      <section style={{ marginTop: "10rem" }}>
+        <AnimatedLine wide={true} />
+        <div style={{ marginTop: "0.5rem" }} />
+        <AnimatedLine wide={false} />
+
+        <InteractiveProjects />
+      </section>
+
+      <div style={{ marginTop: "20rem" }}></div>
 
       <section>
         <SubTitle text={"Интересные проекты"} />
