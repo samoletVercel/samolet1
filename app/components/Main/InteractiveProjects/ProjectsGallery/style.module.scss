@@ -1,0 +1,21 @@
+.gallery {
+  cursor: pointer;
+  height: 13rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery h1 {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery:hover {
+}
+
+.gallery:hover h1 {
+  padding-left: 1rem;
+  opacity: 0.4;
+}
