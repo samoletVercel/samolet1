@@ -7,7 +7,7 @@ import InteractiveHeader from "./components/Main/InteractiveHeader/InteractiveHe
 
 import aboutPic from "@/public/about1.png";
 import aboutPic2 from "@/public/about2.png";
-import samolet from "@/public/samolet_header_without_shadow.svg";
+import samolet from "@/public/samolet.svg";
 
 import { swift } from "./fonts";
 import { ptRootUIMed } from "./fonts";
@@ -24,6 +24,7 @@ import StaggerReveal from "./components/animations/StaggerReveal/StaggerReveal";
 
 import sam from "@/public/shtrih.svg";
 import Shtrih from "./components/animations/Shtrih/Shtrih";
+import PartnersCarousel from "./components/Main/PartnersCarousel/PartnersCarousel";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -99,7 +100,14 @@ export default function Home() {
         <InteractiveProjects />
       </section>
 
-      <div style={{ marginTop: "20rem" }}></div>
+      <section style={{ marginTop: "10rem" }}>
+        <p className={variables.textMain} style={{ marginBottom: "1rem" }}>
+          С кем работаем
+        </p>
+        <AnimatedLine wide={true} />
+        <PartnersCarousel />
+        <AnimatedLine wide={false} />
+      </section>
 
       <section>
         <SubTitle text={"Интересные проекты"} />

@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 const defaultAnimations = {
   hidden: {
     opacity: 0,
-    y: -20,
+    y: 0,
     width: 0,
   },
   visible: {
