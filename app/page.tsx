@@ -102,7 +102,7 @@ export default function Home() {
 
       <section style={{ marginTop: "10rem" }}>
         <p className={variables.textMain} style={{ marginBottom: "1rem" }}>
-          С кем работаем
+          Наши логотипы
         </p>
         <AnimatedLine wide={true} />
         <PartnersCarousel />

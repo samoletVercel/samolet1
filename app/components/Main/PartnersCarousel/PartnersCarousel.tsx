@@ -1,6 +1,5 @@
 "use client";
 import styles from "./style.module.scss";
-import { motion } from "framer-motion";
 
 import pushkin from "@/public/logos/pushkin_pr.svg";
 import omk from "@/public/logos/omk_pr.svg";
@@ -18,17 +17,29 @@ const PartnersCarousel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.carousel}>
-        {images.map((img) => {
+        {images.map((img, i) => {
           return (
-            <Image src={img.src} alt="" width={img.width} height={img.height} />
+            <Image
+              src={img.src}
+              alt=""
+              width={img.width}
+              key={`${img}_${i}`}
+              height={img.height}
+            />
           );
         })}
       </div>
 
       <div className={styles.carousel}>
-        {images.map((img) => {
+        {images.map((img, i) => {
           return (
-            <Image src={img.src} alt="" width={img.width} height={img.height} />
+            <Image
+              src={img.src}
+              alt=""
+              width={img.width}
+              key={`${img}_${i}_2`}
+              height={img.height}
+            />
           );
         })}
       </div>

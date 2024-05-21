@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ptRootUI.className}`}>
         {/* <RouteChange /> */}
-        {/* <Preloader /> */}
+        <Preloader />
         <Header />
         {children}
         <Footer />
