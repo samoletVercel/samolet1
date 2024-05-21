@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import HeaderLink from "./Link/HeaderLink";
 import Link from "next/link";
 import ButtonSlide from "../UI/buttons/ButtonSlide/ButtonSlide";
+import variables from "@/app/variables.module.scss";
 
 const Header = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);

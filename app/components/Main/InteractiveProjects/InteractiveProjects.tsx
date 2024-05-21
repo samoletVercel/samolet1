@@ -2,7 +2,7 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { createPortal } from "react-dom";
 
 import ProjectsGallery from "./ProjectsGallery/ProjectsGallery";
 import Modal from "./ProjectsGallery/Modal/Modal";
@@ -31,6 +31,11 @@ const specialProjects = [{}];
 
 const InteractiveProjects = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -40,7 +45,12 @@ const InteractiveProjects = () => {
       <AnimatedLine wide={false} />
       <ProjectsGallery title="Спецпроекты" setModal={setModal} index={2} />
       <AnimatedLine wide={false} />
-      <Modal modal={modal} projects={projects} />
+      {mounted
+        ? createPortal(
+            <Modal modal={modal} projects={projects} />,
+            document.body
+          )
+        : ""}
     </div>
   );
 };

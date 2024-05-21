@@ -25,6 +25,8 @@ import StaggerReveal from "./components/animations/StaggerReveal/StaggerReveal";
 import sam from "@/public/shtrih.svg";
 import Shtrih from "./components/animations/Shtrih/Shtrih";
 import PartnersCarousel from "./components/Main/PartnersCarousel/PartnersCarousel";
+import HeaderPlane from "./components/Main/3D/HeaderPlane/HeaderPlane.jsx";
+import AwardsBlock from "./components/Main/AwardsBlock/AwardsBlock";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -36,6 +38,7 @@ export default function Home() {
     <main className={variables.container}>
       {/* <Shtrih /> */}
       {/* <InteractiveHeader /> */}
+      <HeaderPlane />
       <Image
         className={styles.headerImg}
         id="headerImageBlock"
@@ -109,9 +112,12 @@ export default function Home() {
         <AnimatedLine wide={false} />
       </section>
 
-      <section>
-        <SubTitle text={"Интересные проекты"} />
-        <ProjectsBlock />
+      <section style={{ marginTop: "10rem" }}>
+        <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
+          Наши награды
+        </p>
+        <AnimatedLine wide={false} />
+        <AwardsBlock />
       </section>
 
       <section>

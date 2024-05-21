@@ -22,8 +22,8 @@ const PartnersCarousel = () => {
             <Image
               src={img.src}
               alt=""
+              key={`${img.src}_1`}
               width={img.width}
-              key={`${img}_${i}`}
               height={img.height}
             />
           );
@@ -36,8 +36,8 @@ const PartnersCarousel = () => {
             <Image
               src={img.src}
               alt=""
+              key={`${img.src}_2`}
               width={img.width}
-              key={`${img}_${i}_2`}
               height={img.height}
             />
           );
