@@ -20,7 +20,13 @@ const PartnersCarousel = () => {
       <div className={styles.carousel}>
         {images.map((img) => {
           return (
-            <Image src={img.src} alt="" width={img.width} height={img.height} />
+            <Image
+              src={img.src}
+              alt=""
+              key={`${img.src}_1`}
+              width={img.width}
+              height={img.height}
+            />
           );
         })}
       </div>
@@ -28,7 +34,13 @@ const PartnersCarousel = () => {
       <div className={styles.carousel}>
         {images.map((img) => {
           return (
-            <Image src={img.src} alt="" width={img.width} height={img.height} />
+            <Image
+              src={img.src}
+              alt=""
+              key={`${img.src}_2`}
+              width={img.width}
+              height={img.height}
+            />
           );
         })}
       </div>

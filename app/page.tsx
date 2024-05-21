@@ -25,6 +25,7 @@ import StaggerReveal from "./components/animations/StaggerReveal/StaggerReveal";
 import sam from "@/public/shtrih.svg";
 import Shtrih from "./components/animations/Shtrih/Shtrih";
 import PartnersCarousel from "./components/Main/PartnersCarousel/PartnersCarousel";
+import HeaderPlane from "./components/Main/3D/HeaderPlane/HeaderPlane";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -36,6 +37,7 @@ export default function Home() {
     <main className={variables.container}>
       {/* <Shtrih /> */}
       {/* <InteractiveHeader /> */}
+      <HeaderPlane />
       <Image
         className={styles.headerImg}
         id="headerImageBlock"
