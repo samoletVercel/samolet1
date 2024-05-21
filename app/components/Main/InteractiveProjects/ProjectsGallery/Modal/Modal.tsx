@@ -46,9 +46,9 @@ const Modal = ({
     });
 
     window.addEventListener("mousemove", (e) => {
-      const { clientX, clientY } = e;
-      moveContainerX(clientX);
-      moveContainerY(clientY);
+      const { pageX, pageY } = e;
+      moveContainerX(pageX);
+      moveContainerY(pageY);
     });
   }, []);
   return (

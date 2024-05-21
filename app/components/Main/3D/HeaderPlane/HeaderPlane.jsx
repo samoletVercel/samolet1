@@ -23,7 +23,7 @@ const HeaderPlane = () => {
 
 function Cube() {
   const obj = useLoader(OBJLoader, "/3d/plane_paper.obj");
-  const matcap = useLoader(TextureLoader, "3d/matcap/clay_k.jpg");
+  const matcap = useLoader(TextureLoader, "3d/matcap/1.png");
 
   const geometry = useMemo(() => {
     let g;
