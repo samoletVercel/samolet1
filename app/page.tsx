@@ -120,10 +120,12 @@ export default function Home() {
         <AwardsBlock />
       </section>
 
-      <section>
-        <SubTitle text={"Последние события"} />
+      <section style={{ marginTop: "10rem" }}>
+        <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
+          Последние события
+        </p>
+        <AnimatedLine wide={false} />
         <NewsBlock />
-        <ButtonSlide text="все события" link="#" />
       </section>
     </main>
   );
