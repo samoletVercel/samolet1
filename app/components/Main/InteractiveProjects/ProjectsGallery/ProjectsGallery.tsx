@@ -7,6 +7,8 @@ import { swift } from "@/app/fonts";
 import variables from "@/app/variables.module.scss";
 import { Dispatch, SetStateAction } from "react";
 
+import arrow from "@/public/arrow.svg";
+
 type setModalType = {
   active: boolean;
   index: number;
@@ -34,6 +36,12 @@ const ProjectsGallery = ({
       }}
     >
       <h1 className={`${swift.className} ${variables.textTitle}`}>{title}</h1>
+
+      <div className={styles.imgContainer}>
+        <div className={styles.imgSlider}>
+          <Image src={arrow} alt="arrow_icon" fill />
+        </div>
+      </div>
     </div>
   );
 };

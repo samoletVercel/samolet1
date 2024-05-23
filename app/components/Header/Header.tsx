@@ -74,10 +74,11 @@ const Header = () => {
             </motion.div>
           </div>
         </div>
-        <HeaderButton
-          isOpened={isOpened}
-          setIsOpened={setIsOpened}
-        ></HeaderButton>
+        <HeaderButton isOpened={isOpened} setIsOpened={setIsOpened} />
+
+        <div className={`${styles.studio} ${variables.textMain}`}>
+          дизайн-студия
+        </div>
       </div>
 
       <motion.div

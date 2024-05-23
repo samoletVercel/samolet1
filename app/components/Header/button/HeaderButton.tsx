@@ -47,7 +47,15 @@ const HeaderButtonElement = ({
   return (
     <div className={styles.element}>
       <p className={`${ptRootUI.className} ${variables.textMain}`}>{title}</p>
-      <Image src={image.src} alt={image.alt} style={{ marginTop: "0.2rem" }} />
+
+      <div className={styles.imgContainer}>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </div>
     </div>
   );
 };

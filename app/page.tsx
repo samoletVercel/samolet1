@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       <section style={{ marginTop: "10rem" }}>
-        <p className={variables.textMain} style={{ marginBottom: "1rem" }}>
+        <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Наши логотипы
         </p>
         <AnimatedLine wide={true} />
