@@ -22,7 +22,7 @@ const HeaderPlane = () => {
 };
 
 function Cube() {
-  const obj = useLoader(OBJLoader, "/3d/plane_paper.obj");
+  const obj = useLoader(OBJLoader, "/3d/plane_paper_2.obj");
   const matcap = useLoader(TextureLoader, "3d/matcap/8.png"); // 2, 4, 8
 
   const geometry = useMemo(() => {
@@ -76,7 +76,11 @@ function Cube() {
 
   return (
     <mesh geometry={geometry} ref={mesh}>
-      <meshMatcapMaterial matcap={matcap} />
+      <meshStandardMaterial
+        wireframe={true}
+        color={"black"}
+        wireframeLinewidth={5}
+      />
     </mesh>
   );
 }
