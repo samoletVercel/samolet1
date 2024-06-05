@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef } from "react";
 import styles from "./style.module.scss";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useMotionValue, useSpring } from "framer-motion";
-import { motion } from "framer-motion-3d";
 
 import { useLoader } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
@@ -76,11 +75,14 @@ function Cube() {
 
   return (
     <mesh geometry={geometry} ref={mesh}>
-      <meshStandardMaterial
+      <meshMatcapMaterial matcap={matcap} />
+      {/* <meshBasicMaterial color={"#FF3129"} /> */}
+
+      {/* <meshStandardMaterial
         wireframe={true}
         color={"black"}
         wireframeLinewidth={5}
-      />
+      /> */}
     </mesh>
   );
 }

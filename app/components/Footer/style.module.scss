@@ -11,7 +11,29 @@
 }
 
 .footer {
+  position: relative;
+  width: 100%;
   margin-top: 8rem;
+
+  .email {
+    display: inline-block;
+    margin-top: 4rem;
+  }
+
+  .contacts {
+    margin-top: 20rem;
+    border-top: #333333 1px solid;
+    padding-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .element {
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
 
   h1 {
     margin-top: 1.5rem;

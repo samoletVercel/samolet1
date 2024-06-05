@@ -13,7 +13,7 @@ const InteractiveHeader = () => {
     y: useMotionValue(0),
   };
 
-  const manageMouseMove = (e) => {
+  const manageMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
     mouse.x.set(clientX / 2 - 100);
     mouse.y.set(clientY);
