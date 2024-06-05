@@ -3,15 +3,16 @@ import variables from "@/app/variables.module.scss";
 import { swift } from "@/app/fonts";
 import FooterForm from "../UI/forms/FooterForm/FooterForm";
 import Link from "next/link";
+import AnimatedText from "../animations/AnimatedText/AnimatedText";
 
 const Footer = () => {
   return (
     <footer className={`${variables.container} ${styles.footer}`}>
       <div className={styles.wide_line}></div>
 
-      <h1 className={`${variables.textTitle} ${swift.className}`}>
-        Связаться с нами
-      </h1>
+      <div style={{ marginTop: "1.5rem" }}></div>
+
+      <AnimatedText text={[`Связаться с нами`]} />
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
           <p className={variables.textSec}>

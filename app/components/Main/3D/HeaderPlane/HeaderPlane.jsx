@@ -76,11 +76,12 @@ function Cube() {
 
   return (
     <mesh geometry={geometry} ref={mesh}>
-      <meshStandardMaterial
+      {/*   <meshStandardMaterial
         wireframe={true}
         color={"black"}
         wireframeLinewidth={5}
-      />
+      /> */}
+      <meshMatcapMaterial matcap={matcap} />
     </mesh>
   );
 }

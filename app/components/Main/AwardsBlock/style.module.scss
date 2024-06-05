@@ -1,52 +1,63 @@
 .main {
   display: flex;
   flex-direction: column;
+  padding-top: 0.5rem;
 }
 
 .award {
-  margin-top: 0.2rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
 
-  .slider {
+  span {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  p {
+    position: absolute;
+    right: 0;
+
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.award:hover {
+  span {
+    padding-left: 1rem;
+  }
+
+  p {
+    border-bottom: 1px solid #333333;
+    padding-bottom: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .award {
     width: 100%;
-
-    font-size: 2.4rem;
-    color: #333333;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    overflow: hidden;
-    height: 4rem;
+    justify-content: flex-start;
 
-    .slide {
-      width: 100%;
-      height: 100%;
-      padding: 0.4rem 0;
-      transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
-      display: grid;
-      grid-template-columns: 7rem 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
+    border-bottom: #333333 1px solid;
 
-    .notActive {
-      position: absolute;
-      top: 0;
-    }
-
-    .active {
-      background-color: #333333;
-      padding-left: 1rem;
-      color: white;
-      position: absolute;
-      top: 100%;
+    p {
+      position: inherit;
     }
   }
 
-  .slider:hover {
-    .notActive {
-      top: -100%;
+  .award:hover {
+    span {
+      padding-left: 0;
     }
 
-    .active {
-      top: 0;
+    p {
+      border-bottom: none;
+      padding-bottom: 0;
     }
   }
 }

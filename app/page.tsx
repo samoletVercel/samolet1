@@ -2,8 +2,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import styles from "./page.module.scss";
 import variables from "@/app/variables.module.scss";
-import MainSection from "./components/Main/Section/MainSection";
-import InteractiveHeader from "./components/Main/InteractiveHeader/InteractiveHeader";
 
 import aboutPic from "@/public/about1.png";
 import aboutPic2 from "@/public/about2.png";
@@ -11,7 +9,6 @@ import samolet from "@/public/samolet.svg";
 
 import { swift } from "./fonts";
 import { ptRootUIMed } from "./fonts";
-import Reveal from "./components/animations/Reveal/Reveal";
 import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
 import SubTitle from "./components/titles/SubTitle/SubTitle";
 import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
@@ -61,18 +58,33 @@ export default function Home() {
         className={`${styles.marginTopSection} ${styles.mainAboutSection}`}
       >
         <AnimatedLine wide={true} />
+        <div style={{ marginTop: "0.5rem" }} />
+        <AnimatedLine wide={false} />
 
-        <AnimatedText
-          text={[
-            "Летаем в мире дизайна с 1995 года",
-            "Создаём уникальные фирменные стили",
-            "и авторские издательские проекты.",
-          ]}
-        />
+        <div style={{ marginTop: "1rem" }}></div>
+        <div className={styles.about_desc}>
+          <AnimatedText
+            text={[
+              "Летаем в мире дизайна с 1995 года",
+              "Создаём уникальные фирменные стили",
+              "и авторские издательские проекты.",
+            ]}
+          />
+        </div>
 
-        <div style={{ marginTop: "10rem" }}></div>
+        <div className={styles.about_mobile}>
+          <AnimatedText text={["Летаем в мире дизайна с 1995 года"]} />
+        </div>
+
+        <div className={styles.marginTopSection}></div>
 
         <AnimatedLine wide={false} />
+
+        <div
+          className={`${styles.aboutSectionContentSec_mobile} ${variables.textMain}`}
+        >
+          Создаём уникальные фирменные стили и авторские издательские проекты.
+        </div>
 
         <div className={`${styles.aboutSectionContentSec}`}>
           <Image src={aboutPic2} alt="about_second" />
@@ -95,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ marginTop: "10rem" }}>
+      <section className={styles.marginTopSection}>
         <AnimatedLine wide={true} />
         <div style={{ marginTop: "0.5rem" }} />
         <AnimatedLine wide={false} />
@@ -103,7 +115,7 @@ export default function Home() {
         <InteractiveProjects />
       </section>
 
-      <section style={{ marginTop: "10rem" }}>
+      <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Наши логотипы
         </p>
@@ -112,7 +124,7 @@ export default function Home() {
         <AnimatedLine wide={false} />
       </section>
 
-      <section style={{ marginTop: "10rem" }}>
+      <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Наши награды
         </p>
@@ -120,7 +132,11 @@ export default function Home() {
         <AwardsBlock />
       </section>
 
-      <section style={{ marginTop: "10rem" }}>
+      <section className={styles.marginTopSection}>
+        <ProjectsBlock />
+      </section>
+
+      <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Последние события
         </p>

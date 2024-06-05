@@ -42,7 +42,7 @@ const AnimatedText = ({ text }: { text: string | string[] }) => {
         ref={ref}
         initial="hidden"
         animate={controls}
-        transition={{ staggerChildren: 0.01 }}
+        transition={{ staggerChildren: 0.03 }}
         className={`${variables.textTitle} ${swift.className}`}
       >
         {textArray.map((line) => (
@@ -52,14 +52,14 @@ const AnimatedText = ({ text }: { text: string | string[] }) => {
           >
             {line.split(" ").map((word, i) => (
               <span style={{ display: "inline-block" }} key={`${word}_${i}`}>
-                {/*                 <motion.span
-                  style={{ display: "inline-block"}}
+                <motion.span
+                  style={{ display: "inline-block" }}
                   variants={defaultAnimations}
                 >
                   {word}
-                </motion.span> */}
+                </motion.span>
 
-                {word.split("").map((char, idx) => (
+                {/*                 {word.split("").map((char, idx) => (
                   <motion.span
                     style={{ display: "inline-block" }}
                     variants={defaultAnimations}
@@ -67,7 +67,7 @@ const AnimatedText = ({ text }: { text: string | string[] }) => {
                   >
                     {char}
                   </motion.span>
-                ))}
+                ))} */}
 
                 <span style={{ display: "inline-block" }}>&nbsp;</span>
               </span>
