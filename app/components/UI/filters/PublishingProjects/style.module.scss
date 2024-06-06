@@ -7,7 +7,14 @@
     color: #9e9e9e;
     flex-wrap: wrap;
 
-    p {
+    button {
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+      background-color: inherit;
+      text-align: left;
       cursor: pointer;
       padding-bottom: 0.2rem;
       transition: 0.2s;
@@ -20,6 +27,7 @@
 }
 
 .projectsGrid {
+  position: relative;
   margin-top: 4rem;
   display: grid;
   gap: 1rem;
@@ -29,6 +37,27 @@
 @media (max-width: 900px) {
   .projectsGrid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .filterContainer {
+    margin-top: 1rem;
+
+    .tags {
+      display: flex;
+      gap: 1rem;
+      color: #9e9e9e;
+      flex-direction: column;
+
+      p {
+        cursor: pointer;
+        padding-bottom: 0.2rem;
+        transition: 0.2s;
+      }
+      .tagActive {
+        color: #333;
+        border-bottom: 1px solid #333;
+      }
+    }
   }
 }
 

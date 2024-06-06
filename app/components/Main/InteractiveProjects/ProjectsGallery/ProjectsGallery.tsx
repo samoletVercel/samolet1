@@ -9,6 +9,7 @@ import { Dispatch, SetStateAction } from "react";
 
 import arrow from "@/public/arrow.svg";
 import AnimatedText from "@/app/components/animations/AnimatedText/AnimatedText";
+import Link from "next/link";
 
 type setModalType = {
   active: boolean;
@@ -18,17 +19,20 @@ type setModalType = {
 const ProjectsGallery = ({
   title,
   setModal,
+  link,
   src,
   index,
 }: {
   title: string;
   setModal: Dispatch<SetStateAction<setModalType>>;
+  link: string;
   src?: string;
   index: number;
 }) => {
   return (
     <>
-      <div
+      <Link
+        href={link}
         className={`${styles.gallery} `}
         onMouseEnter={() => {
           setModal({ active: true, index: index });
@@ -44,16 +48,16 @@ const ProjectsGallery = ({
             <Image src={arrow} alt="arrow_icon" fill />
           </div>
         </div>
-      </div>
+      </Link>
 
-      <div className={styles.gallery_mobile}>
+      <Link href={link} className={styles.gallery_mobile}>
         <div className={styles.preview}>
           <Image src={`/projectsPreview/${src}`} alt="image" fill />
         </div>
         <div className={styles.gallery_mobile_content}>
           <AnimatedText text={[`${title}`]} />
         </div>
-      </div>
+      </Link>
     </>
   );
 };

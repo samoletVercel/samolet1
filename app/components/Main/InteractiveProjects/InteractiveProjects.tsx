@@ -40,6 +40,7 @@ const InteractiveProjects = () => {
   return (
     <div className={styles.container}>
       <ProjectsGallery
+        link="/branding"
         title="Брендинг"
         setModal={setModal}
         index={0}
@@ -47,6 +48,7 @@ const InteractiveProjects = () => {
       />
       <AnimatedLine wide={false} />
       <ProjectsGallery
+        link="/publishing"
         title="Издательство"
         setModal={setModal}
         index={1}
@@ -54,6 +56,7 @@ const InteractiveProjects = () => {
       />
       <AnimatedLine wide={false} />
       <ProjectsGallery
+        link="/"
         title="Спецпроекты"
         setModal={setModal}
         index={2}

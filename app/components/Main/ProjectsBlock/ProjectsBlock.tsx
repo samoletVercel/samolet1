@@ -10,34 +10,27 @@ import detskaya from "@/public/detskaya.png";
 import pushkin from "@/public/pushkin.png";
 import gothic from "@/public/gotica.png";
 import mage from "@/public/mage2.png";
+import ProjectCardReg from "../../UI/cards/ProjectCardReg/ProjectCardReg";
 
 const ProjectsBlock = () => {
   return (
     <div className={styles.grid}>
-      <ProjectCard
-        gridColumn="1 / 4"
-        gridRow="1 / 3"
+      <ProjectCardReg
         img={detskaya}
         name="Детская иллюстрированная книга в истории России 1881-1939"
         tags={["Издательство", "Cамиздат"]}
       />
-      <ProjectCard
-        gridColumn="4 / 7"
-        gridRow="1/ 3"
+      <ProjectCardReg
         img={pushkin}
         name="Государственный музей изобразительных искусств имени А.С.Пушкина"
         tags={["Брендинг"]}
       />
-      <ProjectCard
-        gridColumn="1 / 4"
-        gridRow="3 / 5"
+      <ProjectCardReg
         img={gothic}
         name="Каталог к выставке ИСКУССТВО СЕВЕРНОЙ ГОТИКИ И РЕНЕССАНСА"
         tags={["Издательство"]}
       />
-      <ProjectCard
-        gridColumn="4 / 7"
-        gridRow="3 / 5"
+      <ProjectCardReg
         img={mage}
         name="Айдентика для морской арктической геолого-геофизической экспедиции"
         tags={["Брендинг"]}

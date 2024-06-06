@@ -11,9 +11,9 @@ const Footer = () => {
     <footer className={`${variables.container} ${styles.footer}`}>
       {/* <FooterPlane /> */}
 
-      <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
+      {/*       <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
         Связаться с нами
-      </p>
+      </p> */}
       <AnimatedLine wide={true} />
 
       {/*  <a
@@ -33,8 +33,6 @@ const Footer = () => {
           <p>+7 (499) 975-11-15</p>
         </div>
       </div> */}
-
-      <div className={styles.wide_line}></div>
 
       <div style={{ marginTop: "1.5rem" }}></div>
 
