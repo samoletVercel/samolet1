@@ -3,6 +3,7 @@ import variables from "@/app/variables.module.scss";
 import { swift, ptRootUIMed } from "@/app/fonts";
 import FooterForm from "../UI/forms/FooterForm/FooterForm";
 import Link from "next/link";
+import AnimatedText from "../animations/AnimatedText/AnimatedText";
 import AnimatedLine from "../animations/AnimatedLine/AnimatedLine";
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
       </p>
       <AnimatedLine wide={true} />
 
-      <a
+      {/*  <a
         className={`${styles.email} ${swift.className} ${variables.textTitle}`}
         href="mailto:samolet@gmail.com"
       >
@@ -31,13 +32,13 @@ const Footer = () => {
           <span className={ptRootUIMed.className}>Телефон</span>
           <p>+7 (499) 975-11-15</p>
         </div>
-      </div>
+      </div> */}
 
-      {/*       <div className={styles.wide_line}></div>
+      <div className={styles.wide_line}></div>
 
-      <h1 className={`${variables.textTitle} ${swift.className}`}>
-        Связаться с нами
-      </h1>
+      <div style={{ marginTop: "1.5rem" }}></div>
+
+      <AnimatedText text={[`Связаться с нами`]} />
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
           <p className={variables.textSec}>
@@ -66,7 +67,7 @@ const Footer = () => {
         </div>
         <div className={styles.thin_line}></div>
       </div>
-      <div style={{ height: "10vh" }}></div> */}
+      <div style={{ height: "10vh" }}></div>
     </footer>
   );
 };

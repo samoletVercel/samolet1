@@ -9,17 +9,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Project } from "@/app/types";
 
-const ProjectCard = ({
-  gridColumn,
-  gridRow,
+const ProjectCardReg = ({
   img,
   name,
   tags,
   year,
   link,
 }: {
-  gridColumn: string;
-  gridRow: string;
   img: StaticImageData;
   name: string;
   tags?: Array<string>;
@@ -30,7 +26,6 @@ const ProjectCard = ({
 
   return (
     <div
-      style={{ gridColumn, gridRow }}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={styles.projectCard}
@@ -61,4 +56,4 @@ const ProjectCard = ({
     </div>
   );
 };
-export default ProjectCard;
+export default ProjectCardReg;

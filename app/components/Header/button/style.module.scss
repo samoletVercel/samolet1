@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
   position: absolute;
+  width: 12rem;
   height: 3rem;
   right: 1rem;
   background-color: inherit;
@@ -11,7 +12,7 @@
   .slider {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
   }
 
   .element {
@@ -33,12 +34,6 @@
       width: 1rem;
       height: 1rem;
       position: relative;
-    }
-
-    @media screen and (max-width: 900px) {
-      p {
-        display: none;
-      }
     }
 
     p:after {
@@ -66,6 +61,24 @@
 
 @media screen and (max-width: 900px) {
   .button {
-    right: 0;
+    right: 50%;
+    transform: translateX(50%);
+    height: 3.5rem;
+    background-color: white;
+    border: 1px solid #333333;
+    //box-shadow: 0px 0px 20px 1px rgb(33, 33, 33, 0.1);
+    border-radius: 2rem;
+
+    .element {
+      justify-content: center;
+    }
+
+    .element:hover {
+      padding-bottom: 0;
+
+      p:after {
+        width: 0;
+      }
+    }
   }
 }

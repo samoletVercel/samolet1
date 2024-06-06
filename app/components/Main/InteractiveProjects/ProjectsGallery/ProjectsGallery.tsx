@@ -8,6 +8,7 @@ import variables from "@/app/variables.module.scss";
 import { Dispatch, SetStateAction } from "react";
 
 import arrow from "@/public/arrow.svg";
+import AnimatedText from "@/app/components/animations/AnimatedText/AnimatedText";
 
 type setModalType = {
   active: boolean;
@@ -17,32 +18,43 @@ type setModalType = {
 const ProjectsGallery = ({
   title,
   setModal,
-  image,
+  src,
   index,
 }: {
   title: string;
   setModal: Dispatch<SetStateAction<setModalType>>;
-  image?: JSX.Element;
+  src?: string;
   index: number;
 }) => {
   return (
-    <div
-      className={`${styles.gallery} `}
-      onMouseEnter={() => {
-        setModal({ active: true, index: index });
-      }}
-      onMouseLeave={() => {
-        setModal({ active: false, index: index });
-      }}
-    >
-      <h1 className={`${swift.className} ${variables.textTitle}`}>{title}</h1>
+    <>
+      <div
+        className={`${styles.gallery} `}
+        onMouseEnter={() => {
+          setModal({ active: true, index: index });
+        }}
+        onMouseLeave={() => {
+          setModal({ active: false, index: index });
+        }}
+      >
+        <AnimatedText text={[`${title}`]} />
 
-      <div className={styles.imgContainer}>
-        <div className={styles.imgSlider}>
-          <Image src={arrow} alt="arrow_icon" fill />
+        <div className={styles.imgContainer}>
+          <div className={styles.imgSlider}>
+            <Image src={arrow} alt="arrow_icon" fill />
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className={styles.gallery_mobile}>
+        <div className={styles.preview}>
+          <Image src={`/projectsPreview/${src}`} alt="image" fill />
+        </div>
+        <div className={styles.gallery_mobile_content}>
+          <AnimatedText text={[`${title}`]} />
+        </div>
+      </div>
+    </>
   );
 };
 export default ProjectsGallery;

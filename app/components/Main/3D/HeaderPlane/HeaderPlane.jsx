@@ -77,12 +77,13 @@ function Cube() {
     <mesh geometry={geometry} ref={mesh}>
       <meshMatcapMaterial matcap={matcap} />
       {/* <meshBasicMaterial color={"#FF3129"} /> */}
-
       {/* <meshStandardMaterial
+      {/*   <meshStandardMaterial
         wireframe={true}
         color={"black"}
         wireframeLinewidth={5}
       /> */}
+      <meshMatcapMaterial matcap={matcap} />
     </mesh>
   );
 }

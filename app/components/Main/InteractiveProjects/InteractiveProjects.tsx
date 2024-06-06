@@ -39,11 +39,26 @@ const InteractiveProjects = () => {
 
   return (
     <div className={styles.container}>
-      <ProjectsGallery title="Брендинг" setModal={setModal} index={0} />
+      <ProjectsGallery
+        title="Брендинг"
+        setModal={setModal}
+        index={0}
+        src={projects[0].src}
+      />
       <AnimatedLine wide={false} />
-      <ProjectsGallery title="Издательство" setModal={setModal} index={1} />
+      <ProjectsGallery
+        title="Издательство"
+        setModal={setModal}
+        index={1}
+        src={projects[1].src}
+      />
       <AnimatedLine wide={false} />
-      <ProjectsGallery title="Спецпроекты" setModal={setModal} index={2} />
+      <ProjectsGallery
+        title="Спецпроекты"
+        setModal={setModal}
+        index={2}
+        src={projects[2].src}
+      />
       <AnimatedLine wide={false} />
       {mounted
         ? createPortal(
