@@ -8,6 +8,7 @@ import { ptRootUIMed } from "@/app/fonts";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Project } from "@/app/types";
+import Link from "next/link";
 
 const ProjectCardReg = ({
   img,
@@ -25,7 +26,8 @@ const ProjectCardReg = ({
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <div
+    <Link
+      href={"/publishing/project"}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={styles.projectCard}
@@ -53,7 +55,7 @@ const ProjectCardReg = ({
           )} */}
         </div>
       </motion.div>
-    </div>
+    </Link>
   );
 };
 export default ProjectCardReg;
