@@ -7,6 +7,7 @@ import BrandingProjects from "../components/UI/filters/BrandingProjects/Branding
 import museu from "@/public/museu.png";
 import mage from "@/public/mage.png";
 import ariel from "@/public/ariel.png";
+import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Брендинг",
@@ -35,12 +36,8 @@ const BrandingPage = () => {
 
   return (
     <main className={variables.container}>
-      <h1
-        style={{ marginTop: "5rem" }}
-        className={`${variables.textTitle} ${swift.className}`}
-      >
-        Брендинг
-      </h1>
+      <div style={{ marginTop: "5rem" }} />
+      <AnimatedText text={"Брендинг"} />
       <div className={styles.wide_line} style={{ marginTop: "1rem" }}></div>
       <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
       <BrandingProjects tags={tags} projects={projects} />

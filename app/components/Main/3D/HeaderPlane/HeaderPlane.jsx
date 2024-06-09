@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./style.module.scss";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useMotionValue, useSpring } from "framer-motion";
 
 import { useLoader } from "@react-three/fiber";
@@ -9,18 +9,41 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
 
 const HeaderPlane = () => {
+  console.log("123");
+  const canvas = useRef(null);
+  const [webglLoaded, setWebglLoaded] = useState(true);
+
+  console.log(canvas);
+
   return (
     <div className={styles.main}>
-      <Canvas>
-        <ambientLight intensity={2} />
-        <directionalLight position={[2, 1, 1]} />
-        <Cube />
-      </Canvas>
+      {webglLoaded && (
+        <Canvas ref={canvas}>
+          {/*           <ambientLight intensity={2} />
+          <directionalLight position={[2, 1, 1]} /> */}
+          <Cube />
+        </Canvas>
+      )}
     </div>
   );
 };
 
 function Cube() {
+  /*   const { gl } = useThree();
+
+  const reload = useCallback(() => {
+    gl.forceContextRestore();
+    console.log("restored");
+  });
+  console.log(gl);
+
+  useEffect(() => {
+    gl.domElement.addEventListener("webglcontextlost", reload);
+    return () => {
+      gl.domElement.removeEventListener("webglcontextlost", reload);
+    };
+  }, [reload]); */
+
   const obj = useLoader(OBJLoader, "/3d/plane_paper_2.obj");
   const matcap = useLoader(TextureLoader, "3d/matcap/8.png"); // 2, 4, 8
 

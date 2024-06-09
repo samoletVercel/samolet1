@@ -8,6 +8,7 @@ import img2 from "@/public/диквир.png";
 import img3 from "@/public/борр.png";
 
 import PublishingProjects from "../components/UI/filters/PublishingProjects/PublishingProjects";
+import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Издательство",
@@ -59,12 +60,8 @@ const PublishingPage = () => {
 
   return (
     <main className={variables.container}>
-      <h1
-        style={{ marginTop: "5rem" }}
-        className={`${variables.textTitle} ${swift.className}`}
-      >
-        Издательство
-      </h1>
+      <div style={{ marginTop: "5rem" }} />
+      <AnimatedText text={"Брендинг"} />
       <div className={styles.wide_line} style={{ marginTop: "1rem" }}></div>
       <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
       <PublishingProjects tags={tags} projects={projects} />

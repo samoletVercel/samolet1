@@ -24,6 +24,7 @@ import Shtrih from "./components/animations/Shtrih/Shtrih";
 import PartnersCarousel from "./components/Main/PartnersCarousel/PartnersCarousel";
 import HeaderPlane from "./components/Main/3D/HeaderPlane/HeaderPlane.jsx";
 import AwardsBlock from "./components/Main/AwardsBlock/AwardsBlock";
+import CanvasPlane from "./components/Main/3D/Canvas/Canvas";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -35,7 +36,8 @@ export default function Home() {
     <main className={variables.container}>
       {/* <Shtrih /> */}
       {/* <InteractiveHeader /> */}
-      <HeaderPlane />
+      <CanvasPlane />
+      {/* <HeaderPlane /> */}
       <Image
         className={styles.headerImg}
         id="headerImageBlock"

@@ -39,10 +39,10 @@ const Modal = ({
 
   useEffect(() => {
     const moveContainerX = gsap.quickTo(ref.current, "left", {
-      duration: 0.8,
+      duration: 0.6,
     });
     const moveContainerY = gsap.quickTo(ref.current, "top", {
-      duration: 0.8,
+      duration: 0.6,
     });
 
     window.addEventListener("mousemove", (e) => {
