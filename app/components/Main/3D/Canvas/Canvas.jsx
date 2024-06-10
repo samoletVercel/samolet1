@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import gsap from "gsap";
-import { useMotionValue, useSpring } from "framer-motion";
 import styles from "./style.module.scss";
 
 let mouse = {
@@ -50,7 +49,7 @@ export default function CanvasPlane() {
 
       loader.load(
         // resource URL
-        "/3d/plane_paper_2.obj",
+        "/3d/paperplane.obj",
         // called when resource is loaded
         function (object) {
           object.children[0].material = material;
