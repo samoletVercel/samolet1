@@ -8,64 +8,57 @@ import AnimatedLine from "../animations/AnimatedLine/AnimatedLine";
 
 const Footer = () => {
   return (
-    <footer className={`${variables.container} ${styles.footer}`}>
-      {/* <FooterPlane /> */}
-
-      {/*       <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
-        Связаться с нами
-      </p> */}
-      <AnimatedLine wide={true} />
-
-      {/*  <a
-        className={`${styles.email} ${swift.className} ${variables.textTitle}`}
-        href="mailto:samolet@gmail.com"
-      >
-        samolet@gmail.com
-      </a>
-
-      <div className={`${styles.contacts} ${variables.textMain}`}>
-        <div className={styles.element}>
-          <span className={ptRootUIMed.className}>Адрес</span>
-          <p>107078, Россия, Москва,ул. Садовая-Черногрязская д. 3(б)</p>
-        </div>
-        <div className={styles.element}>
-          <span className={ptRootUIMed.className}>Телефон</span>
-          <p>+7 (499) 975-11-15</p>
-        </div>
-      </div> */}
-
-      <div style={{ marginTop: "1.5rem" }}></div>
-
-      <AnimatedText text={[`Связаться с нами`]} />
-      <div className={styles.footerContainer}>
-        <div className={styles.footerContent}>
-          <p className={variables.textSec}>
-            Задача организации, в особенности же рамки и место обучения кадров
-            влечет за собой процесс внедрения и модернизации направлений
-            прогрессивного развития.{" "}
+    <footer>
+      <div className={`${styles.footer}`}>
+        <div className={`${variables.container}`}>
+          <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
+            Связаться с нами
           </p>
-          <div className={styles.contacts}>
-            <p>107078, Россия, Москва,ул. Садовая-Черногрязская д. 3(б)</p>
-            <p>(499) 975-1115</p>
-            <p>samolet@gmail.com</p>
+          <AnimatedLine wide={true} />
+
+          <div style={{ marginTop: "0.5rem" }}></div>
+          <AnimatedLine wide={false} />
+
+          <div style={{ marginTop: "1rem" }}></div>
+
+          <div className={styles.mainElement}>
+            <AnimatedText text={[`samolet@gmail.com`]} />
+            <p className={variables.textMain}>Эл. почта</p>
+          </div>
+
+          <div style={{ marginTop: "8rem" }}></div>
+
+          <AnimatedLine wide={false} />
+          <div className={styles.mainElement}>
+            <AnimatedText text={[`+7 (499) 975-11-15`]} />
+            <p className={variables.textMain}>Телефон</p>
           </div>
         </div>
-        <div>
-          <FooterForm />
+
+        <div className={styles.back}>
+          <div className={variables.container}>
+            <div className={styles.footerNav}>
+              <div className={`${styles.navContainer} ${variables.textMain}`}>
+                <span className={ptRootUIMed.className}>Навигация</span>
+                <Link href="branding">Брендинг</Link>
+                <Link href="branding">Издательство</Link>
+                <Link href="branding">Спецпроекты</Link>
+                <Link href="branding">О студии</Link>
+                <Link href="branding">Блог</Link>
+              </div>
+              <div className={`${styles.navContainer} ${variables.textMain}`}>
+                <span className={ptRootUIMed.className}>Наш адрес</span>
+                <p>107078, Россия, Москва,ул. Садовая-Черногрязская д. 3(б)</p>
+              </div>
+            </div>
+            <div className={styles.copyright}>
+              <AnimatedLine wide={false} />
+              <div style={{ marginTop: "1rem" }}></div>
+              ©2024 дизайн-студия «Самолет»
+            </div>
+          </div>
         </div>
       </div>
-      <div className={styles.footerNav}>
-        <div className={styles.thin_line}></div>
-        <div className={`${styles.navContainer} ${variables.textMain}`}>
-          <Link href="branding">Брендинг</Link>
-          <Link href="branding">Издательство</Link>
-          <Link href="branding">Спецпроекты</Link>
-          <Link href="branding">О студии</Link>
-          <Link href="branding">Блог</Link>
-        </div>
-        <div className={styles.thin_line}></div>
-      </div>
-      <div style={{ height: "10vh" }}></div>
     </footer>
   );
 };

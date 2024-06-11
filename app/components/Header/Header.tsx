@@ -123,7 +123,7 @@ const Header = () => {
             <HeaderLink text="О студии" link="" setIsOpened={setIsOpened} />
             <HeaderLink text="Блог" link="" setIsOpened={setIsOpened} />
           </div>
-          <ButtonSlide text="Связаться с нами" link="" />
+          {/* <ButtonSlide text="Связаться с нами" link="" /> */}
 
           <div className={styles.thin_line} style={{ marginTop: "2rem" }}></div>
 
