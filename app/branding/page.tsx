@@ -7,6 +7,8 @@ import BrandingProjects from "../components/UI/filters/BrandingProjects/Branding
 import museu from "@/public/museu.png";
 import mage from "@/public/mage.png";
 import ariel from "@/public/ariel.png";
+import agrup from "@/public/а_групп.png";
+
 import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 
 export const metadata: Metadata = {
@@ -30,7 +32,12 @@ const BrandingPage = () => {
     {
       img: ariel,
       name: "Ариель Металл",
-      tags: ["Металлоторг", "Реклама  "],
+      tags: ["Металлоторг", "Реклама"],
+    },
+    {
+      img: agrup,
+      name: "А ГРУПП",
+      tags: ["Металлоторг", "Фирменный стиль"],
     },
   ];
 

@@ -61,7 +61,7 @@ const PublishingPage = () => {
   return (
     <main className={variables.container}>
       <div style={{ marginTop: "5rem" }} />
-      <AnimatedText text={"Брендинг"} />
+      <AnimatedText text={"Издательство"} />
       <div className={styles.wide_line} style={{ marginTop: "1rem" }}></div>
       <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
       <PublishingProjects tags={tags} projects={projects} />
