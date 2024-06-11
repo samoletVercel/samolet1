@@ -96,6 +96,10 @@
   background-color: #333333;
 }
 
+.line_mob {
+  display: block;
+}
+
 .links_list {
   margin-top: 2rem;
   display: flex;
@@ -126,6 +130,10 @@
 
   .links_list {
     margin-top: 1rem;
+  }
+
+  .line_mob {
+    display: none;
   }
 }
 

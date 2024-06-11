@@ -125,7 +125,12 @@ const Header = () => {
           </div>
           {/* <ButtonSlide text="Связаться с нами" link="" /> */}
 
-          <div className={styles.thin_line} style={{ marginTop: "2rem" }}></div>
+          <div className={styles.line_mob}>
+            <div
+              className={styles.thin_line}
+              style={{ marginTop: "2rem" }}
+            ></div>
+          </div>
 
           <div className={styles.contacts}>
             <p>107078, Россия, Москва,ул. Садовая-Черногрязская д. 3(б)</p>
