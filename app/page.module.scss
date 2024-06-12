@@ -94,6 +94,23 @@
 .about_mobile {
   display: none;
 }
+.about_second_mobile {
+  margin-top: 4rem;
+  display: none;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  span {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
 
 .aboutSectionContentSec_mobile {
   margin-top: 1rem;
@@ -122,6 +139,10 @@
   }
 
   .about_mobile {
+    display: block;
+  }
+
+  .about_second_mobile {
     display: block;
   }
 }

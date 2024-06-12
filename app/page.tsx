@@ -117,6 +117,21 @@ export default function Home() {
         <InteractiveProjects />
       </section>
 
+      <section className={styles.about_second_mobile}>
+        <Image src={aboutPic2} alt="about_second_mobile" />
+        <span className={`${ptRootUIMed.className} ${variables.textMain}`}>
+          Владимир Семенихин — <br />
+          основатель студии.
+        </span>
+        <p className={variables.textMain}>
+          « <br />
+          Мы не просто создаем дизайн, мы стремимся к искусству <br />в каждом
+          проекте, будь то разработка фирменного стиля, оформление упаковки или
+          издание книг и каталогов. Студия «Самолет» – это сообщество творческих
+          личностей, готовых взлететь в мир идей и вдохновения. »
+        </p>
+      </section>
+
       <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Наши логотипы
