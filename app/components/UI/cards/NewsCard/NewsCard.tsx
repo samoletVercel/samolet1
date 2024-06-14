@@ -16,15 +16,14 @@ const NewsCard = ({
 }) => {
   return (
     <div className={styles.newsCard}>
-      <div className={styles.imgContainer}>
-        {img ? <Image src={img} alt={title} fill /> : <div> </div>}
-      </div>
-
       <p
         className={`${styles.date} ${variables.textSec} ${ptRootUIMed.className}`}
       >
         {date}
       </p>
+      <div className={styles.imgContainer}>
+        {img ? <Image src={img} alt={title} fill /> : <div> </div>}
+      </div>
 
       <p className={`${styles.title} ${variables.textMain}`}>{title}</p>
     </div>
