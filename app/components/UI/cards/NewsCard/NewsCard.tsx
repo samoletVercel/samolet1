@@ -17,7 +17,7 @@ const NewsCard = ({
   return (
     <div className={styles.newsCard}>
       <div className={styles.imgContainer}>
-        {img ? <Image src={img} alt={title} /> : <div> </div>}
+        {img ? <Image src={img} alt={title} fill /> : <div> </div>}
       </div>
 
       <p
