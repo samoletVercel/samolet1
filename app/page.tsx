@@ -34,27 +34,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={variables.container}>
-      {/* <Shtrih /> */}
-      {/* <InteractiveHeader /> */}
       <CanvasPlane />
-      {/* <HeaderPlane /> */}
       <Image
         className={styles.headerImg}
         id="headerImageBlock"
         src={samolet}
         alt="samolet header"
       />
-      {/*  <section className={styles.main_sections}>
-        <div className={styles.wide_line}></div>
-        <div className={styles.thin_line} style={{ marginTop: "0.4rem" }}></div>
-        <div className={`${styles.sections_grid} ${variables.textMain}`}>
-          <MainSection title="Брендинг" link="/branding" />
-          <MainSection title="Издательство" link="/publishing" />
-          <MainSection title="Спецпроекты" link="" />
-        </div>
-      </section> */}
-
-      {/* --------- */}
 
       <section
         className={`${styles.marginTopSection} ${styles.mainAboutSection}`}
