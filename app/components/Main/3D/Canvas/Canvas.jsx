@@ -20,26 +20,18 @@ export default function CanvasPlane() {
     if (paramsRef.current.first) {
       paramsRef.current.first = true;
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
 
-      const light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
+      const width = canvas.current.clientWidth;
+      const hegiht = canvas.current.clientHeight;
+
+      const camera = new THREE.PerspectiveCamera(75, width / hegiht, 0.1, 1000);
+
+      const light = new THREE.AmbientLight(0xffffff, 0.5);
       scene.add(light);
 
       const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
       directionalLight.position.set(0, 32, 64);
       scene.add(directionalLight);
-
-      /*       const moveContainerX = gsap.quickTo(mouse.x, {
-        duration: 0.8,
-      });
-      const moveContainerY = gsap.quickTo(mouse.y, {
-        duration: 0.8,
-      }); */
 
       const matcap = new THREE.TextureLoader().load("3d/matcap/8.png");
       const material = new THREE.MeshMatcapMaterial({ matcap: matcap });
@@ -48,9 +40,8 @@ export default function CanvasPlane() {
       let model;
 
       loader.load(
-        // resource URL
         "/3d/paperplane.obj",
-        // called when resource is loaded
+
         function (object) {
           object.children[0].material = material;
           model = object;
@@ -65,7 +56,7 @@ export default function CanvasPlane() {
       );
 
       const renderer = new THREE.WebGLRenderer({ canvas: canvas.current });
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, hegiht);
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setAnimationLoop(animate);
       renderer.setClearColor(0xffffff, 0);
@@ -82,25 +73,15 @@ export default function CanvasPlane() {
         gsap.to(mouse, {
           x: x,
           y: y,
-          duration: 3, // Use a shorter duration
+          duration: 3,
           ease: "power4.out",
         });
-
-        /*       moveContainerX(clientX);
-        moveContainerY(clientY); */
-
-        /*       const { innerWidth, innerHeight } = window;
-        const { clientX, clientY } = e;
-        mouse.x = (clientX / innerWidth) * 2 - 1;
-        mouse.y = 2 - (clientY / innerHeight) * 2 - 1; */
-
-        //console.log(mouse);
       };
 
       const manageWindowResize = () => {
         camera.aspect = canvas.offsetWidth / canvas.offsetHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(width, hegiht);
       };
 
       window.addEventListener("resize", manageWindowResize);
