@@ -1,18 +1,32 @@
 .button {
   div {
+    transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 1rem;
+    background-color: #333333;
     display: inline-block;
     height: 1rem;
     margin-right: 0.5rem;
   }
 }
 
-/* 
+.button:hover {
+  div {
+    width: 1.3rem;
+    background-color: #ff3129;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .button {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #333333;
+    color: white;
+
     div {
-      text-align: center;
-      width: 100% !important;
-      padding: 1rem 2rem !important;
+      display: none;
     }
   }
-} */
+}
