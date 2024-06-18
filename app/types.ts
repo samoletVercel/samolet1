@@ -17,3 +17,9 @@ export interface PublishingProject {
   author: string;
   scan?: boolean;
 }
+
+export interface SpecialProject {
+  img: StaticImageData;
+  name: string;
+  tags: Array<string>;
+}

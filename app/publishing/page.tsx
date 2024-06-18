@@ -9,6 +9,7 @@ import img3 from "@/public/борр.png";
 
 import PublishingProjects from "../components/UI/filters/PublishingProjects/PublishingProjects";
 import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
+import AnimatedLine from "../components/animations/AnimatedLine/AnimatedLine";
 
 export const metadata: Metadata = {
   title: "Издательство",
@@ -62,8 +63,10 @@ const PublishingPage = () => {
     <main className={variables.container}>
       <div style={{ marginTop: "5rem" }} />
       <AnimatedText text={"Издательство"} />
-      <div className={styles.wide_line} style={{ marginTop: "1rem" }}></div>
-      <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
+      <div style={{ marginTop: "1rem" }} />
+      <AnimatedLine wide={true} />
+      <div style={{ marginTop: "0.8rem" }} />
+      <AnimatedLine wide={false} />
       <PublishingProjects tags={tags} projects={projects} />
     </main>
   );

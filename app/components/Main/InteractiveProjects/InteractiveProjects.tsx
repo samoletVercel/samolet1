@@ -56,7 +56,7 @@ const InteractiveProjects = () => {
       />
       <AnimatedLine wide={false} />
       <ProjectsGallery
-        link="/"
+        link="/special"
         title="Спецпроекты"
         setModal={setModal}
         index={2}

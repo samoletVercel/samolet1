@@ -1,0 +1,67 @@
+.publishingCard {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 28rem;
+
+  .slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .imgContainer {
+        width: 100%;
+        height: 83%;
+        position: relative;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      p {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .content {
+      width: 100%;
+      height: 3rem;
+      background-color: white;
+
+      position: absolute;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .publishingCard {
+    height: auto;
+    margin-bottom: 1rem;
+
+    .slider {
+      height: auto;
+      bottom: 0 !important;
+
+      .container {
+        .imgContainer {
+          height: 24rem;
+        }
+
+        p {
+          margin-top: 0.3rem;
+        }
+      }
+
+      .content {
+        position: relative;
+        height: auto;
+      }
+    }
+  }
+}

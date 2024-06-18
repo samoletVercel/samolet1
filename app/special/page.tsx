@@ -6,7 +6,10 @@ import Image from "next/image";
 
 import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 import AnimatedLine from "../components/animations/AnimatedLine/AnimatedLine";
-import NewsBlock from "../components/Main/NewsBlock/NewsBlock";
+import SpecialProjects from "../components/UI/filters/SpecialProjects/SpecialProjects";
+
+import sp1 from "@/public/special1.png";
+import sp2 from "@/public/special2.png";
 
 export const metadata: Metadata = {
   title: "О студии",
@@ -15,12 +18,29 @@ export const metadata: Metadata = {
 };
 
 const SpecialPage = () => {
+  const tags = ["Все", "Календари", "Прочее"];
+  const projects = [
+    {
+      img: sp1,
+      name: "Календарь Самолета",
+      tags: ["Календари"],
+    },
+    {
+      img: sp2,
+      name: "Самовар",
+      tags: ["Прочее"],
+    },
+  ];
+
   return (
     <main className={variables.container}>
       <div style={{ marginTop: "5rem" }} />
       <AnimatedText text={"Спецпроекты"} />
-      <div style={{ marginTop: "2rem" }} />
+      <div style={{ marginTop: "1rem" }} />
+      <AnimatedLine wide={true} />
+      <div style={{ marginTop: "0.8rem" }} />
       <AnimatedLine wide={false} />
+      <SpecialProjects tags={tags} projects={projects} />
     </main>
   );
 };

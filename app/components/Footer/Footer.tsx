@@ -42,7 +42,7 @@ const Footer = () => {
                 <span className={ptRootUIMed.className}>Навигация</span>
                 <Link href="/branding">Брендинг</Link>
                 <Link href="/publishing">Издательство</Link>
-                <Link href="branding">Спецпроекты</Link>
+                <Link href="/special">Спецпроекты</Link>
                 <Link href="/about">О студии</Link>
                 <Link href="/news">Блог</Link>
               </div>
