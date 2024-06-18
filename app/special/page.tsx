@@ -14,15 +14,14 @@ export const metadata: Metadata = {
     "Сочиняем, генерируем идеи, рисуем, проектируем и воплощаем все это в жизнь. Каждый раз, взявшись за работу, мы придумываем что-то новое, нечто такое, чем по праву может гордиться каждый, обратившийся к нам.",
 };
 
-const BrandingPage = () => {
+const SpecialPage = () => {
   return (
     <main className={variables.container}>
       <div style={{ marginTop: "5rem" }} />
-      <AnimatedText text={"Новости"} />
+      <AnimatedText text={"Спецпроекты"} />
       <div style={{ marginTop: "2rem" }} />
       <AnimatedLine wide={false} />
-      <NewsBlock button={false} />
     </main>
   );
 };
-export default BrandingPage;
+export default SpecialPage;
