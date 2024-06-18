@@ -7,14 +7,14 @@ import new2 from "@/public/news2.png";
 import new3 from "@/public/news3.png";
 import Button from "../../UI/buttons/Button/Button";
 
-const NewsBlock = () => {
+const NewsBlock = ({ button }: { button: boolean }) => {
   return (
     <>
       <div className={styles.grid}>
         <NewsCard
           img={new1}
           date="21.12.23"
-          title="В данный момент работаем над проспектами к выставкам Андрея Бисти и Латифа Казбеков."
+          title="В данный момент работаем над проспектами к выставкам Андрея Бисти и Латифа Казбекова."
           link=""
         />
         <NewsCard
@@ -26,13 +26,15 @@ const NewsBlock = () => {
         <NewsCard
           img={new3}
           date="21.12.23"
-          title="Готовим к публикации на сайте айдентику ГМИИ им. Пушкина"
+          title="Готовим к публикации на сайте айдентику ГМИИ имени А. С. Пушкина"
           link=""
         />
       </div>
-      <div className={styles.btn}>
-        <Button text="Все новости" link="" />
-      </div>
+      {button && (
+        <div className={styles.btn}>
+          <Button text="Все новости" link="/news" />
+        </div>
+      )}
     </>
   );
 };

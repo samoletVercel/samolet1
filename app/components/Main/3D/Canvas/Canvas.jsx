@@ -11,6 +11,18 @@ let mouse = {
   y: 0,
 };
 
+let vel = {
+  x: 0,
+  y: 0,
+};
+
+let scale = 0;
+
+function getScale(x, y) {
+  const scale = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+  return scale * 3.4;
+}
+
 export default function CanvasPlane() {
   const canvas = useRef(null);
   const paramsRef = useRef({
@@ -75,6 +87,10 @@ export default function CanvasPlane() {
           y: y,
           duration: 3,
           ease: "power4.out",
+          onUpdate: () => {
+            vel.x = x - mouse.x;
+            vel.y = y - mouse.y;
+          },
         });
       };
 
@@ -93,6 +109,13 @@ export default function CanvasPlane() {
           scene.children[2].lookAt(mouse.x * 7, mouse.y * 7, 0);
           scene.children[2].position.y = mouse.y * 7;
           scene.children[2].position.x = mouse.x * 7;
+
+          const threeScale = Math.min(1, scale);
+
+          scene.children[2].scale.set(threeScale, threeScale, threeScale);
+
+          scale = getScale(vel.x, vel.y);
+          console.log(threeScale);
         }
 
         renderer.render(scene, camera);

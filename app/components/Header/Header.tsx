@@ -120,8 +120,12 @@ const Header = () => {
               setIsOpened={setIsOpened}
             />
             <HeaderLink text="Спецпроекты" link="" setIsOpened={setIsOpened} />
-            <HeaderLink text="О студии" link="" setIsOpened={setIsOpened} />
-            <HeaderLink text="Блог" link="" setIsOpened={setIsOpened} />
+            <HeaderLink
+              text="О студии"
+              link="/about"
+              setIsOpened={setIsOpened}
+            />
+            <HeaderLink text="Блог" link="/news" setIsOpened={setIsOpened} />
           </div>
           {/* <ButtonSlide text="Связаться с нами" link="" /> */}
 

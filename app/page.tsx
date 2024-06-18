@@ -53,7 +53,7 @@ export default function Home() {
         <div className={styles.about_desc}>
           <AnimatedText
             text={[
-              "Летаем в мире дизайна с 1995 года",
+              "Летаем в мире дизайна с 1995 года.",
               "Создаём уникальные фирменные стили",
               "и авторские издательские проекты",
             ]}
@@ -78,19 +78,19 @@ export default function Home() {
           <Image src={aboutPic2} alt="about_second" />
           <div className={`${styles.textContainer} ${variables.textMain}`}>
             <span className={ptRootUIMed.className}>
-              Владимир Семенихин — основатель студии.
+              Владимир Семенихин&nbsp; — &nbsp;основатель студии.
             </span>
             <p>
               Мы не просто создаем дизайн, мы стремимся к искусству <br />в
               каждом проекте, будь то разработка фирменного стиля, оформление
               упаковки или издание книг и каталогов. Студия «Самолет» – это
               сообщество творческих личностей, готовых взлететь в мир идей и
-              вдохновения. »
+              вдохновения»
             </p>
 
             <div style={{ marginTop: "4rem" }} />
 
-            <Button text="О студии" link="" />
+            <Button text="О студии" link="/about" />
           </div>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function Home() {
           Мы не просто создаем дизайн, мы стремимся к искусству в каждом
           проекте, будь то разработка фирменного стиля, оформление упаковки или
           издание книг и каталогов. Студия «Самолет» – это сообщество творческих
-          личностей, готовых взлететь в мир идей и вдохновения. »
+          личностей, готовых взлететь в мир идей и вдохновения»
         </p>
         <div style={{ marginTop: "3rem" }} />
 
@@ -147,7 +147,7 @@ export default function Home() {
           Последние события
         </p>
         <AnimatedLine wide={false} />
-        <NewsBlock />
+        <NewsBlock button={true} />
       </section>
     </main>
   );

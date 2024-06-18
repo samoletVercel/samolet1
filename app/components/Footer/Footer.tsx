@@ -40,11 +40,11 @@ const Footer = () => {
             <div className={styles.footerNav}>
               <div className={`${styles.navContainer} ${variables.textMain}`}>
                 <span className={ptRootUIMed.className}>Навигация</span>
-                <Link href="branding">Брендинг</Link>
-                <Link href="branding">Издательство</Link>
+                <Link href="/branding">Брендинг</Link>
+                <Link href="/publishing">Издательство</Link>
                 <Link href="branding">Спецпроекты</Link>
-                <Link href="branding">О студии</Link>
-                <Link href="branding">Блог</Link>
+                <Link href="/about">О студии</Link>
+                <Link href="/news">Блог</Link>
               </div>
               <div className={`${styles.navContainer} ${variables.textMain}`}>
                 <span className={ptRootUIMed.className}>Наш адрес</span>
