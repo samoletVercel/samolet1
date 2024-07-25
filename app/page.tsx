@@ -11,7 +11,6 @@ import { swift } from "./fonts";
 import { ptRootUIMed } from "./fonts";
 import ButtonSlide from "./components/UI/buttons/ButtonSlide/ButtonSlide";
 import SubTitle from "./components/titles/SubTitle/SubTitle";
-import ProjectsBlock from "./components/Main/ProjectsBlock/ProjectsBlock";
 import NewsBlock from "./components/Main/NewsBlock/NewsBlock";
 import AnimatedText from "./components/animations/AnimatedText/AnimatedText";
 import AnimatedLine from "./components/animations/AnimatedLine/AnimatedLine";
@@ -143,10 +142,6 @@ export default async function Home() {
         <AnimatedLine wide={false} />
         <AwardsBlock awards={awards}/>
       </section>
-
-      {/*       <section className={styles.marginTopSection}>
-        <ProjectsBlock />
-      </section> */}
 
       <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
