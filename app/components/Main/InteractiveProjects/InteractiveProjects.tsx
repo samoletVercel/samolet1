@@ -8,7 +8,7 @@ import ProjectsGallery from "./ProjectsGallery/ProjectsGallery";
 import Modal from "./ProjectsGallery/Modal/Modal";
 import AnimatedLine from "../../animations/AnimatedLine/AnimatedLine";
 
-const projects = [
+/* const projects = [
   {
     title: "1",
     src: "branding/Group 73.png",
@@ -21,7 +21,7 @@ const projects = [
     title: "3",
     src: "special/3.png",
   },
-];
+]; */
 
 const brandingProjects = [{}];
 
@@ -29,13 +29,15 @@ const izdatProjects = [{}];
 
 const specialProjects = [{}];
 
-const InteractiveProjects = () => {
+const InteractiveProjects = ({projects}: {projects: {branding: {src: string, type: string}, publishing: {src: string, type: string}, special: {src: string, type: string}}}) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const projectsArray = Object.values(projects)
 
   return (
     <div className={styles.container}>
@@ -44,7 +46,8 @@ const InteractiveProjects = () => {
         title="Брендинг"
         setModal={setModal}
         index={0}
-        src={projects[0].src}
+        type={projects.branding.type}
+        src={projects.branding.src}
       />
       <AnimatedLine wide={false} />
       <ProjectsGallery
@@ -52,7 +55,8 @@ const InteractiveProjects = () => {
         title="Издательство"
         setModal={setModal}
         index={1}
-        src={projects[1].src}
+        type={projects.publishing.type}
+        src={projects.publishing.src}
       />
       <AnimatedLine wide={false} />
       <ProjectsGallery
@@ -60,12 +64,13 @@ const InteractiveProjects = () => {
         title="Спецпроекты"
         setModal={setModal}
         index={2}
-        src={projects[2].src}
+        type={projects.publishing.type}
+        src={projects.special.src}
       />
       <AnimatedLine wide={false} />
       {mounted
         ? createPortal(
-            <Modal modal={modal} projects={projects} />,
+            <Modal modal={modal} projects={projectsArray} />,
             document.body
           )
         : ""}

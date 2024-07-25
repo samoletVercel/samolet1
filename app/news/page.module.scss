@@ -58,3 +58,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+}
+

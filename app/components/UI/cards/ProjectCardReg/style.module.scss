@@ -16,6 +16,11 @@
       img {
         object-fit: cover;
       }
+      video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .content {
@@ -44,14 +49,14 @@
   .projectCard {
     grid-column: auto !important;
     grid-row: auto !important;
-    min-height: 24rem;
+    min-height: 13rem;
 
     .slider {
       height: auto;
       bottom: 0 !important;
 
       .imgContainer {
-        height: 24rem;
+        height: 13rem;
       }
 
       .content {

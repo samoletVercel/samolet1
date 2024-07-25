@@ -8,29 +8,39 @@ import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 import AnimatedLine from "../components/animations/AnimatedLine/AnimatedLine";
 import SpecialProjects from "../components/UI/filters/SpecialProjects/SpecialProjects";
 
-import sp1 from "@/public/special1.png";
-import sp2 from "@/public/special2.png";
+import getPosts from "../lib/getPostsCat";
+
 
 export const metadata: Metadata = {
-  title: "О студии",
+  title: "Спецпроекты",
   description:
-    "Сочиняем, генерируем идеи, рисуем, проектируем и воплощаем все это в жизнь. Каждый раз, взявшись за работу, мы придумываем что-то новое, нечто такое, чем по праву может гордиться каждый, обратившийся к нам.",
+    "Спецпроекты дизайн-студии «Самолёт»",
 };
 
-const SpecialPage = () => {
-  const tags = ["Все", "Календари", "Прочее"];
-  const projects = [
-    {
-      img: sp1,
-      name: "Календарь Самолета",
-      tags: ["Календари"],
-    },
-    {
-      img: sp2,
-      name: "Самовар",
-      tags: ["Прочее"],
-    },
-  ];
+const SpecialPage = async () => {
+
+  const projs = await getPosts("спецпроекты");
+
+  const tags: string[] = [];
+
+  projs.map((pr: any) => {
+    tags.push(...pr.tags)
+  })
+
+  const filteredTags = tags.reduce((result: any, tag) => {
+    if (!result[tag]) {
+      result[tag] = 1;
+    } else {
+      result[tag] += 1;
+    }
+    return result
+  }, {})
+
+  const entries = Object.entries(filteredTags);
+
+  entries.sort((a: any, b: any) => b[1] - a[1]);
+
+  const sortedTags = ['Все', ...entries.map(entry => entry[0])];
 
   return (
     <main className={variables.container}>
@@ -40,7 +50,7 @@ const SpecialPage = () => {
       <AnimatedLine wide={true} />
       <div style={{ marginTop: "0.8rem" }} />
       <AnimatedLine wide={false} />
-      <SpecialProjects tags={tags} projects={projects} />
+      <SpecialProjects tags={sortedTags} projects={projs} />
     </main>
   );
 };

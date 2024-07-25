@@ -87,9 +87,11 @@ const BrandingProjects = ({
         {filteredProjects.map((el, i) => {
           return (
             <ProjectCardReg
+              cat={el.cat}
+              id={el.id}
               key={i}
-              name={el.name}
-              img={el.img}
+              title={el.title}
+              preview={el.preview}
               tags={el.tags}
             />
           );

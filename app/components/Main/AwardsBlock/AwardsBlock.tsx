@@ -5,7 +5,7 @@ import { ptRootUIMed } from "@/app/fonts";
 import { useState } from "react";
 import variables from "@/app/variables.module.scss";
 
-const awards = [
+/* const awards = [
   {
     title: "Премия на европейском конкурсе рекламы «Эпика»",
     year: "1990",
@@ -30,9 +30,9 @@ const awards = [
     title: "Гран-при Всероссийского конкурса книжной иллюстрации «Образ книги»",
     year: "2009",
   },
-];
+]; */
 
-const AwardsBlock = () => {
+const AwardsBlock = ({awards}: {awards: {title: string; year: string}[]}) => {
   return (
     <div className={styles.main}>
       {awards.map((award, i) => {

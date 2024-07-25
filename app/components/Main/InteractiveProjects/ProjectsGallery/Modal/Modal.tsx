@@ -6,8 +6,8 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 type project = {
-  title: string;
   src: string;
+  type: string;
 };
 
 const scaleAnimation = {
@@ -61,13 +61,26 @@ const Modal = ({
     >
       <div style={{ top: index * -100 + "%" }} className={styles.modalSlider}>
         {projects.map((project, index) => {
-          const { src, title } = project;
+          const { src, type } = project;
 
-          return (
-            <div className={styles.modal} key={`${title}_${index}`}>
-              <Image src={`/projectsPreview/${src}`} alt="image" fill />
+          if (type === "image") {
+            return (
+              <div className={styles.modal} key={`${src}_${index}`}>
+                <Image src={src} alt="image" fill />
+              </div>
+            );
+          } else {
+            return (
+              <div className={styles.modal} key={`${src}_${index}`}>
+                        <video width="680" height="400" autoPlay muted preload="none">
+                <source src={src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-          );
+
+            )
+          }
+
         })}
       </div>
     </motion.div>

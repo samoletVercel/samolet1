@@ -25,13 +25,29 @@ import PartnersCarousel from "./components/Main/PartnersCarousel/PartnersCarouse
 import HeaderPlane from "./components/Main/3D/HeaderPlane/HeaderPlane.jsx";
 import AwardsBlock from "./components/Main/AwardsBlock/AwardsBlock";
 import CanvasPlane from "./components/Main/3D/Canvas/Canvas";
+import getPostId from "./lib/getPostId";
+import getNews from "./lib/getNews";
 
 export const metadata: Metadata = {
   title: "Главная",
   description: "дизайн-студия Самолет",
 };
 
-export default function Home() {
+export default async function Home() {
+  const page = await getPostId(86)
+  const news = await getNews(3)
+
+  
+  const lead = page.post.preview.lead.split('\n')
+
+  const interactivePr = page.post.content[2].attrs
+
+  const logos = page.post.content[4].attrs.items
+
+  const awards = page.post.content[6].attrs.items
+  
+  //console.log(news)
+
   return (
     <main className={variables.container}>
       <CanvasPlane />
@@ -52,16 +68,12 @@ export default function Home() {
         <div style={{ marginTop: "1rem" }}></div>
         <div className={styles.about_desc}>
           <AnimatedText
-            text={[
-              "Летаем в мире дизайна с 1995 года.",
-              "Создаём уникальные фирменные стили",
-              "и авторские издательские проекты",
-            ]}
+            text={lead}
           />
         </div>
 
         <div className={styles.about_mobile}>
-          <AnimatedText text={["Летаем в мире дизайна с 1995 года"]} />
+          <AnimatedText text={lead[0]} />
         </div>
 
         <div className={styles.marginTopSection}></div>
@@ -71,21 +83,16 @@ export default function Home() {
         <div
           className={`${styles.aboutSectionContentSec_mobile} ${variables.textMain}`}
         >
-          Создаём уникальные фирменные стили и авторские издательские проекты.
+          {`${lead[1]} ${lead[2]}`}
         </div>
 
         <div className={`${styles.aboutSectionContentSec}`}>
-          <Image src={aboutPic2} alt="about_second" />
+          <Image src={page.post.preview.src} width={1026} height={609} alt="about_second" />
           <div className={`${styles.textContainer} ${variables.textMain}`}>
             <span className={ptRootUIMed.className}>
-              Владимир Семенихин&nbsp; — &nbsp;основатель студии.
+              {page.post.preview.subtitle}
             </span>
-            <p>
-              Мы не просто создаем дизайн, мы стремимся к искусству <br />в
-              каждом проекте, будь то разработка фирменного стиля, оформление
-              упаковки или издание книг и каталогов. Студия «Самолет» – это
-              сообщество творческих личностей, готовых взлететь в мир идей и
-              вдохновения»
+            <p dangerouslySetInnerHTML={{__html: page.post.preview.text}}>
             </p>
 
             <div style={{ marginTop: "4rem" }} />
@@ -100,22 +107,21 @@ export default function Home() {
         <div style={{ marginTop: "0.5rem" }} />
         <AnimatedLine wide={false} />
 
-        <InteractiveProjects />
+        <InteractiveProjects projects={interactivePr}/>
       </section>
 
       <section className={styles.about_second_mobile}>
-        <Image src={aboutPic2} alt="about_second_mobile" />
+        <Image src={page.post.preview.src}  width={1026} height={609} alt="about_second_mobile" />
         <span className={`${ptRootUIMed.className} ${variables.textMain}`}>
-          Владимир Семенихин — <br />
-          основатель студии.
+        {page.post.preview.subtitle}
         </span>
-        <p className={variables.textMain}>
+        <div className={variables.textMain}>
+          <p>
           « <br />
-          Мы не просто создаем дизайн, мы стремимся к искусству в каждом
-          проекте, будь то разработка фирменного стиля, оформление упаковки или
-          издание книг и каталогов. Студия «Самолет» – это сообщество творческих
-          личностей, готовых взлететь в мир идей и вдохновения»
-        </p>
+          </p>
+          <p dangerouslySetInnerHTML={{__html: page.post.preview.text}}>
+          </p>
+        </div>
         <div style={{ marginTop: "3rem" }} />
 
         <Button text="О студии" link="" />
@@ -126,7 +132,7 @@ export default function Home() {
           Наши логотипы
         </p>
         <AnimatedLine wide={true} />
-        <PartnersCarousel />
+        <PartnersCarousel logos={logos}/>
         <AnimatedLine wide={false} />
       </section>
 
@@ -135,19 +141,19 @@ export default function Home() {
           Наши награды
         </p>
         <AnimatedLine wide={false} />
-        <AwardsBlock />
+        <AwardsBlock awards={awards}/>
       </section>
 
-      <section className={styles.marginTopSection}>
+      {/*       <section className={styles.marginTopSection}>
         <ProjectsBlock />
-      </section>
+      </section> */}
 
       <section className={styles.marginTopSection}>
         <p className={variables.textMain} style={{ marginBottom: "0.5rem" }}>
           Последние события
         </p>
         <AnimatedLine wide={false} />
-        <NewsBlock button={true} />
+        <NewsBlock news={news} />
       </section>
     </main>
   );

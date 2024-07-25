@@ -2,9 +2,8 @@
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import variables from "@/app/variables.module.scss";
-import { SpecialProject } from "@/app/types";
-import ProjectCard from "../../cards/ProjectCard/ProjectCard";
-import PublishingCard from "../../cards/PublishingCard/PublishingCard";
+import { Project } from "@/app/types";
+import ProjectCardReg from "../../cards/ProjectCardReg/ProjectCardReg";
 import { AnimatePresence, motion } from "framer-motion";
 import SpecialCard from "../../cards/SpecialCard/SpecialCard";
 
@@ -13,7 +12,7 @@ const SpecialProjects = ({
   projects,
 }: {
   tags: Array<string>;
-  projects: Array<SpecialProject>;
+  projects: Array<Project>;
 }) => {
   const [selectedTag, setSelectedTag] = useState("Все");
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -85,9 +84,17 @@ const SpecialProjects = ({
             ></motion.div>
           )}
         </AnimatePresence>
+
         {filteredProjects.map((el, i) => {
           return (
-            <SpecialCard key={`${el.name}_${i}`} img={el.img} name={el.name} />
+            <SpecialCard
+              cat={el.cat}
+              id={el.id}
+              key={i}
+              title={el.title}
+              preview={el.preview}
+              tags={el.tags}
+            />
           );
         })}
       </div>

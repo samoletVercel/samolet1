@@ -10,36 +10,40 @@ import ariel from "@/public/ariel.png";
 import agrup from "@/public/а_групп.png";
 
 import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
+import getPosts from "../lib/getPostsCat";
 
 export const metadata: Metadata = {
   title: "Брендинг",
   description: "Брендинговые проекты дизайн-студии Самолёт",
 };
 
-const BrandingPage = () => {
-  const tags = ["Все", "Фирменный стиль", "Реклама", "Упаковка"];
-  const projects = [
-    {
-      img: museu,
-      name: "ГМИИ имени А.С.Пушкина",
-      tags: ["Культура и искусство", "Фирменный стиль"],
-    },
-    {
-      img: mage,
-      name: "Mage",
-      tags: ["Культура и искусство", "Фирменный стиль"],
-    },
-    {
-      img: ariel,
-      name: "Ариель Металл",
-      tags: ["Металлоторг", "Реклама"],
-    },
-    {
-      img: agrup,
-      name: "А ГРУПП",
-      tags: ["Металлоторг", "Фирменный стиль"],
-    },
-  ];
+const BrandingPage = async () => {
+  const projs = await getPosts("брендинг");
+
+
+  //console.log(projs)
+
+  const tags: string[] = [];
+
+  projs.map((pr: any) => {
+    tags.push(...pr.tags)
+  })
+
+  const filteredTags = tags.reduce((result: any, tag) => {
+    if (!result[tag]) {
+      result[tag] = 1;
+    } else {
+      result[tag] += 1;
+    }
+    return result
+  }, {})
+
+  const entries = Object.entries(filteredTags);
+
+  entries.sort((a: any, b: any) => b[1] - a[1]);
+
+  const sortedTags = ['Все', ...entries.map(entry => entry[0])];
+
 
   return (
     <main className={variables.container}>
@@ -47,7 +51,7 @@ const BrandingPage = () => {
       <AnimatedText text={"Брендинг"} />
       <div className={styles.wide_line} style={{ marginTop: "1rem" }}></div>
       <div className={styles.thin_line} style={{ marginTop: "0.8rem" }}></div>
-      <BrandingProjects tags={tags} projects={projects} />
+      <BrandingProjects tags={sortedTags} projects={projs} />
     </main>
   );
 };

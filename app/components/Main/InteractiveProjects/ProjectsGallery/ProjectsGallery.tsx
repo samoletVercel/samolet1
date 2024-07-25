@@ -19,6 +19,7 @@ type setModalType = {
 const ProjectsGallery = ({
   title,
   setModal,
+  type,
   link,
   src,
   index,
@@ -26,7 +27,8 @@ const ProjectsGallery = ({
   title: string;
   setModal: Dispatch<SetStateAction<setModalType>>;
   link: string;
-  src?: string;
+  type: string;
+  src: string;
   index: number;
 }) => {
   return (
@@ -52,7 +54,8 @@ const ProjectsGallery = ({
 
       <Link href={link} className={styles.gallery_mobile}>
         <div className={styles.preview}>
-          <Image src={`/projectsPreview/${src}`} alt="image" fill />
+          {type === 'image' ? <Image src={src} alt="image" fill /> :  <video width="680" height="400" autoPlay playsInline muted preload="none" src={src}> </video>}
+          
         </div>
         <div className={styles.gallery_mobile_content}>
           <AnimatedText text={[`${title}`]} />

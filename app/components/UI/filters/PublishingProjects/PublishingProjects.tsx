@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import variables from "@/app/variables.module.scss";
-import { PublishingProject } from "@/app/types";
+import { Project } from "@/app/types";
 import ProjectCard from "../../cards/ProjectCard/ProjectCard";
 import PublishingCard from "../../cards/PublishingCard/PublishingCard";
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,7 +12,7 @@ const PublishingProjects = ({
   projects,
 }: {
   tags: Array<string>;
-  projects: Array<PublishingProject>;
+  projects: Array<Project>;
 }) => {
   const [selectedTag, setSelectedTag] = useState("Все");
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -33,6 +33,8 @@ const PublishingProjects = ({
   useEffect(() => {
     filterProjects();
   }, [selectedTag]);
+
+  console.log(projects)
 
   function filterProjects() {
     if (selectedTag !== "Все") {
@@ -87,11 +89,11 @@ const PublishingProjects = ({
         {filteredProjects.map((el, i) => {
           return (
             <PublishingCard
-              key={`${el.name}_${i}`}
-              img={el.img}
-              name={el.name}
-              author={el.author}
-              scan={el.scan}
+              id={el.id}
+              key={`${el.title}_${i}`}
+              cat={el.cat}
+              preview={el.preview}
+              title={el.title}
             />
           );
         })}

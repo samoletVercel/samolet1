@@ -11,53 +11,39 @@ import PublishingProjects from "../components/UI/filters/PublishingProjects/Publ
 import AnimatedText from "../components/animations/AnimatedText/AnimatedText";
 import AnimatedLine from "../components/animations/AnimatedLine/AnimatedLine";
 
+import getPosts from "../lib/getPostsCat";
+
 export const metadata: Metadata = {
   title: "Издательство",
   description: "Издательские проекты дизайн-студии Самолёт",
 };
 
-const PublishingPage = () => {
-  const tags = ["Все", "Книги", "Журналы", "Проспекты"];
-  const projects = [
-    {
-      img: img1,
-      name: "Металлические метафоры. Скульптура",
-      author: "Андрей Бисти",
-      tags: ["Книги"],
-    },
-    {
-      img: img3,
-      name: "БорР: книга о забытом дизайнере дцатых (*) и многом другом...",
-      author: "Владимир Кричевский",
-      tags: ["Книги"],
-    },
-    {
-      img: img2,
-      name: "Детская иллюстрированная книга в истории России 1881-1939",
-      author: "Владимир Семенихин",
-      tags: ["Книги"],
-      scan: true,
-    },
-    {
-      img: img2,
-      name: "Детская иллюстрированная книга в истории России 1881-1939",
-      author: "Владимир Семенихин",
-      tags: ["Книги"],
-      scan: true,
-    },
-    {
-      img: img3,
-      name: "БорР: книга о забытом дизайнере дцатых (*) и многом другом...",
-      author: "Владимир Кричевский",
-      tags: ["Книги"],
-    },
-    {
-      img: img1,
-      name: "Металлические метафоры. Скульптура",
-      author: "Андрей Бисти",
-      tags: ["Книги"],
-    },
-  ];
+const PublishingPage = async () => {
+
+
+  const projs = await getPosts("издательство");
+
+  const tags: string[] = [];
+
+  projs.map((pr: any) => {
+    tags.push(...pr.tags)
+  })
+
+  const filteredTags = tags.reduce((result: any, tag) => {
+    if (!result[tag]) {
+      result[tag] = 1;
+    } else {
+      result[tag] += 1;
+    }
+    return result
+  }, {})
+
+  const entries = Object.entries(filteredTags);
+
+  entries.sort((a: any, b: any) => b[1] - a[1]);
+
+  const sortedTags = ['Все', ...entries.map(entry => entry[0])];
+
 
   return (
     <main className={variables.container}>
@@ -67,7 +53,7 @@ const PublishingPage = () => {
       <AnimatedLine wide={true} />
       <div style={{ marginTop: "0.8rem" }} />
       <AnimatedLine wide={false} />
-      <PublishingProjects tags={tags} projects={projects} />
+      <PublishingProjects tags={sortedTags} projects={projs} />
     </main>
   );
 };

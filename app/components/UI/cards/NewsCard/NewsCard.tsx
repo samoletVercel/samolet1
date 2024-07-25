@@ -10,7 +10,7 @@ const NewsCard = ({
   link,
 }: {
   date: string;
-  img?: StaticImageData;
+  img?: string;
   title: string;
   link: string;
 }) => {

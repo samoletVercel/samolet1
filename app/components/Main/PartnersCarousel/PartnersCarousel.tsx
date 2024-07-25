@@ -13,32 +13,32 @@ import Image from "next/image";
 
 const images = [pushkin, omk, severstal, ariel_metal, cheglakov, mage, agrupp];
 
-const PartnersCarousel = () => {
+const PartnersCarousel = ({logos}: {logos: {title: string; src: string; sizes: {width: number; height: number}}[]}) => {
   return (
     <div className={styles.container}>
       <div className={styles.carousel}>
-        {images.map((img, i) => {
+        {logos.map((img, i) => {
           return (
             <Image
               src={img.src}
               alt=""
               key={`${img.src}_1`}
-              width={img.width}
-              height={img.height}
+              width={img.sizes.width}
+              height={img.sizes.height}
             />
           );
         })}
       </div>
 
       <div className={styles.carousel}>
-        {images.map((img, i) => {
+        {logos.map((img, i) => {
           return (
             <Image
               src={img.src}
               alt=""
               key={`${img.src}_2`}
-              width={img.width}
-              height={img.height}
+              width={img.sizes.width}
+              height={img.sizes.height}
             />
           );
         })}

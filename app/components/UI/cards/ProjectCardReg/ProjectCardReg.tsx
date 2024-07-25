@@ -11,23 +11,30 @@ import { Project } from "@/app/types";
 import Link from "next/link";
 
 const ProjectCardReg = ({
-  img,
-  name,
+  id,
+  preview,
+  cat,
+  title,
   tags,
   year,
   link,
 }: {
-  img: StaticImageData;
-  name: string;
+  id: number;
+  preview: {id: number, src: string, type: string};
+  cat: string;
+  title: string;
   tags?: Array<string>;
   year?: string;
   link?: string;
 }) => {
   const [isHover, setIsHover] = useState(false);
 
+  const category = new Map();
+  category.set('брендинг', 'branding');
+
   return (
     <Link
-      href={"/publishing/project"}
+      href={`/${category.get(cat)}/${id}`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={styles.projectCard}
@@ -38,11 +45,18 @@ const ProjectCardReg = ({
         transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
       >
         <div className={styles.imgContainer}>
-          <Image src={img} alt={name} fill />
+          {preview.type === "image" ? 
+            <Image src={preview.src} alt={title} fill /> : 
+            <video width="680" height="400" autoPlay muted playsInline preload="none">
+              <source src={preview.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          }
+          
         </div>
         <div className={styles.content}>
           <p className={`${variables.textMain} ${ptRootUIMed.className}`}>
-            {name}
+            {title}
           </p>
           {/*  {tags && (
             <div className={styles.tagsContainer}>

@@ -115,7 +115,6 @@ export default function CanvasPlane() {
           scene.children[2].scale.set(threeScale, threeScale, threeScale);
 
           scale = getScale(vel.x, vel.y);
-          console.log(threeScale);
         }
 
         renderer.render(scene, camera);

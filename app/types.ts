@@ -1,10 +1,10 @@
 import { StaticImageData } from "next/image";
 
 export interface Project {
-  gridColumn?: string;
-  gridRow?: string;
-  img: StaticImageData;
-  name: string;
+  id: number;
+  cat: string;
+  preview: {id: number, src: string, type: string};
+  title: string;
   tags: Array<string>;
   year?: string;
   link?: string;
